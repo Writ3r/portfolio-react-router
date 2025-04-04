@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Remix Dev",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "npm run dev"
+        },
+        {
+            "name": "Remix Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:5173"
+        },
+    ],
+    "compounds": [
+        {
+            "name": "Remix: Debug All",
+            "configurations": [
+                "Remix Dev",
+                "Remix Chrome"
+            ]
+        }
+    ]
+}
