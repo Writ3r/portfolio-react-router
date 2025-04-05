@@ -1,11 +1,9 @@
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
-import { Col, Row } from "react-bootstrap";
 
 export function Welcome({ message }: { message: string }) {
   return (
     <main className="flex items-center justify-center pt-16 pb-4">
-      <div></div>
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
         <header className="flex flex-col items-center gap-9">
           <div className="w-[500px] max-w-[100vw] p-4">
@@ -26,28 +24,6 @@ export function Welcome({ message }: { message: string }) {
             <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
               What&apos;s next?
             </p>
-            <Row>
-              <Col>
-                PAPA 1
-              </Col>
-              <Col>
-                PAPA 2
-              </Col>
-              <Col>
-                PAPA 3
-              </Col>
-              </Row>
-              <Row>
-              <Col>
-                PAPA 1
-              </Col>
-              <Col>
-                PAPA 2
-              </Col>
-              <Col>
-                PAPA 3
-              </Col>
-              </Row>
             <ul>
               {resources.map(({ href, text, icon }) => (
                 <li key={href}>
