@@ -1,6 +1,8 @@
 import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export function NavBar() {
   return (
@@ -12,45 +14,42 @@ export function NavBar() {
       }}
       fixed="top"
     >
-      <Container style={{backgroundColor:""}}>
+      <Container style={{ backgroundColor: "" }}>
         <Navbar.Brand href="#home">
           <strong className="white-text">Lucas Wing</strong>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavLink href="#link" active>Home</NavLink>
-            <NavLink href="#link">Portfolio</NavLink>
-            <NavLink href="#link">About</NavLink>
-            <NavLink href="#link">Experience</NavLink>
-            <NavLink href="#link">Skills</NavLink>
-            <NavLink href="#link">Projects</NavLink>
+            <Nav.Link href="#link" active className="top-nav-link">
+              Home
+            </Nav.Link>
+            <Nav.Link href="#link" className="top-nav-link">
+              Portfolio
+            </Nav.Link>
+            <Nav.Link href="#link" className="top-nav-link">
+              About
+            </Nav.Link>
+            <Nav.Link href="#link" className="top-nav-link">
+              Experience
+            </Nav.Link>
+            <Nav.Link href="#link" className="top-nav-link">
+              Skills
+            </Nav.Link>
+            <Nav.Link href="#link" className="top-nav-link">
+              Projects
+            </Nav.Link>
           </Nav>
           <Nav className="ml-auto">
-            <NavLink href="#link">Portfolio</NavLink>
+            <Nav.Link
+              href="#link"
+              className="top-nav-link border border-light rounded waves-effect waves-light"
+            >
+              <FontAwesomeIcon icon={faGithub} className="mr-2" /> GitHub
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
-}
-
-interface NavLinkProps extends React.PropsWithChildren {
-  href: string | undefined;
-  active?: boolean;
-}
-
-function NavLink(props: NavLinkProps) {
-  return (
-    <Nav.Link
-      style={{
-        fontWeight: "300",
-      }}
-      className = "nav-link top-nav-link"
-      href={props.href}
-      active={props.active || false}
-    >
-      {props.children}
-    </Nav.Link>
   );
 }
