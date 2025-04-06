@@ -15,7 +15,7 @@ body {
 }
 .navbar {
   transition: all 0.3s ease;
-  background-color: rgba(28, 35, 49, 0.4); /* translucent by default */
+  background-color: rgba(0, 0, 0, 0.2); /* translucent by default */
   padding: 1rem 1rem; /* expanded */
   backdrop-filter: blur(6px); /* optional, glass-like */
 }

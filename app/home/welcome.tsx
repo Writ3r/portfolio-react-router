@@ -10,7 +10,7 @@ export function Welcome({ message }: { message: string }) {
 
 
 
-      <main style={{backgroundColor:"rgb(0, 0, 0)"}} className="flex items-center justify-center pt-16 pb-4">
+      <main style={{backgroundColor:"rgb(79, 95, 128)"}} className="flex items-center justify-center pt-16 pb-4">
       <div></div>
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
         <header className="flex flex-col items-center gap-9">
