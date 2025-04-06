@@ -11,6 +11,11 @@ import type { Route } from "./+types/root";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./app.css";
 
+// FIX FA LOADING: https://github.com/FortAwesome/react-fontawesome/issues/134
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {

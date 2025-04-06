@@ -1,6 +1,7 @@
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 export function Footer() {
   return (
@@ -9,19 +10,33 @@ export function Footer() {
       style={{ backgroundColor: "#1c2331" }}
     >
       <div className="pt-4">
-        <Button variant="outline-light">Resume Doc</Button>
-        <Button variant="outline-light">Cover Letter</Button>
+        <Button variant="outline-light">
+          RESUME DOC
+          <FontAwesomeIcon
+            className="ml-2 animated swing infinite"
+            icon={faDownload}
+            style={{ color: "white" }}
+          />
+        </Button>
+        <Button variant="outline-light">
+          COVER LETTER
+          <FontAwesomeIcon
+            className="ml-2 animated swing infinite"
+            icon={faDownload}
+            style={{ color: "white" }}
+          />
+        </Button>
       </div>
       <hr className="my-4" />
       <div className="pb-4">
         <FontAwesomeIcon
           className="mr-3"
-          icon={faLinkedin}
+          icon={faGithub}
           style={{ color: "white" }}
         />
         <FontAwesomeIcon
           className="mr-3"
-          icon={faGithub}
+          icon={faLinkedin}
           style={{ color: "white" }}
         />
       </div>
