@@ -14,11 +14,15 @@ export function NavBar() {
       setScrolled(offset > 10);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <Navbar expand="lg" className={`navbar-dark ${scrolled ? 'scrolled' : ''}`} fixed="top">
+    <Navbar
+      expand="lg"
+      className={`navbar-dark ${scrolled ? "scrolled" : ""}`}
+      fixed="top"
+    >
       <Container style={{ backgroundColor: "" }}>
         <Navbar.Brand href="#home">
           <strong>Lucas Wing</strong>
@@ -46,15 +50,17 @@ export function NavBar() {
             </Nav.Link>
           </Nav>
           <Nav className="ml-auto">
-            <div className="nav-link top-nav-link">
-              <FontAwesomeIcon icon={faLinkedin} />
+            <div style={{ display: "flex" }}>
+              <Nav.Link className="top-nav-link">
+                <FontAwesomeIcon icon={faLinkedin} />
+              </Nav.Link>
+              <Nav.Link
+                href="#link"
+                className="top-nav-link border border-light rounded waves-effect waves-light"
+              >
+                <FontAwesomeIcon icon={faGithub} className="mr-2" /> GitHub
+              </Nav.Link>
             </div>
-            <Nav.Link
-              href="#link"
-              className="top-nav-link border border-light rounded waves-effect waves-light"
-            >
-              <FontAwesomeIcon icon={faGithub} className="mr-2" /> GitHub
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
