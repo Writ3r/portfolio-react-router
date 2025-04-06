@@ -10,6 +10,7 @@ export function NavBar() {
       style={{
         backgroundColor: "rgb(28, 35, 49)",
       }}
+      fixed="top"
     >
       <Container style={{backgroundColor:""}}>
         <Navbar.Brand href="#home">
@@ -24,6 +25,9 @@ export function NavBar() {
             <NavLink href="#link">Experience</NavLink>
             <NavLink href="#link">Skills</NavLink>
             <NavLink href="#link">Projects</NavLink>
+          </Nav>
+          <Nav className="ml-auto">
+            <NavLink href="#link">Portfolio</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
