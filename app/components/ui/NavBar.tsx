@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
@@ -5,18 +6,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export function NavBar() {
+  const [scrolled, setScrolled] = useState<boolean>(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setScrolled(offset > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <Navbar
-      expand="lg"
-      className="navbar-dark"
-      style={{
-        backgroundColor: "rgb(28, 35, 49)",
-      }}
-      fixed="top"
-    >
+    <Navbar expand="lg" className={`navbar-dark ${scrolled ? 'scrolled' : ''}`} fixed="top">
       <Container style={{ backgroundColor: "" }}>
         <Navbar.Brand href="#home">
-          <strong className="white-text">Lucas Wing</strong>
+          <strong>Lucas Wing</strong>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -42,7 +47,7 @@ export function NavBar() {
           </Nav>
           <Nav className="ml-auto">
             <div className="nav-link top-nav-link">
-                <FontAwesomeIcon icon={faLinkedin} />
+              <FontAwesomeIcon icon={faLinkedin} />
             </div>
             <Nav.Link
               href="#link"
