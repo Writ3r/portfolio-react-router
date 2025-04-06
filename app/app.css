@@ -5,7 +5,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-/* allows using md bootstrap's navbar color */
 .top-nav-link.active {
   background-color: rgba(255,255,255,.1);
 }
@@ -23,4 +22,47 @@ body {
   background-color: rgba(28, 35, 49, 0.95); /* solid when scrolled */
   padding: 0.5rem 1rem; /* shrinks */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* subtle shadow */
+}
+
+.btn {
+  margin: .375rem;
+}
+
+.btn-outline-light {
+  color: #fff;
+  border: 2px solid #fff !important;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  padding: .84rem 2.14rem !important;
+  border-radius: .125rem;
+  font-size: .81rem;
+}
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+  color: #000;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+footer.page-footer .footer-copyright {
+  overflow: hidden;
+  color: hsla(0,0%,100%,.6);
+  background-color: rgba(0,0,0,.2);
+}
+
+footer.page-footer a {
+  color: #fff;
+}
+
+a, a:hover {
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+.font-small {
+  font-size: .9rem;
 }
