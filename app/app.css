@@ -13,13 +13,13 @@ body {
   color: rgb(255, 255, 255);
   font-weight: 300;
 }
-.navbar.toppage {
+.navbar {
   transition: all 0.3s ease;
   background-color: rgba(28, 35, 49, 0.4); /* translucent by default */
   padding: 1rem 1rem; /* expanded */
   backdrop-filter: blur(6px); /* optional, glass-like */
 }
-.navbar {
+.navbar.scrolled {
   background-color: rgba(28, 35, 49, 0.95); /* solid when scrolled */
   padding: 0.5rem 1rem; /* shrinks */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* subtle shadow */

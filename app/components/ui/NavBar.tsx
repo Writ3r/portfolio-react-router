@@ -18,7 +18,7 @@ export function NavBar() {
   }, []);
 
   return (
-    <Navbar expand="lg" className={`navbar-dark ${scrolled ? '' : 'toppage'}`} fixed="top">
+    <Navbar expand="lg" className={`navbar-dark ${scrolled ? 'scrolled' : ''}`} fixed="top">
       <Container style={{ backgroundColor: "" }}>
         <Navbar.Brand href="#home">
           <strong>Lucas Wing</strong>
