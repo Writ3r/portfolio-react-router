@@ -42,10 +42,9 @@ export function Footer() {
         />
       </div>
       <div className="footer-copyright py-3">
-        © 2021 Copyright:
+        © {new Date().getFullYear()} Copyright:{" "}
         <a href="https://lucaswing.com" target="_blank" rel="noreferrer">
-          {" "}
-          lucaswing.com{" "}
+          lucaswing.com
         </a>
       </div>
     </footer>
