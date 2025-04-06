@@ -40,7 +40,6 @@ function NavLink(props: NavLinkProps) {
   return (
     <Nav.Link
       style={{
-        color: "rgb(255, 255, 255)",
         fontWeight: "300",
       }}
       className = "nav-link top-nav-link"
