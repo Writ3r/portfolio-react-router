@@ -1,4 +1,5 @@
-import { Button } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { Button, type ButtonProps } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
@@ -10,22 +11,22 @@ export function Footer() {
       style={{ backgroundColor: "#1c2331" }}
     >
       <div className="pt-4">
-        <Button variant="outline-light">
-          RESUME DOC
-          <FontAwesomeIcon
-            className="ml-2 animated swing infinite"
-            icon={faDownload}
-            style={{ color: "white" }}
-          />
-        </Button>
-        <Button variant="outline-light">
+        <PortfolioButton variant="outline-light" className="">
           COVER LETTER
           <FontAwesomeIcon
-            className="ml-2 animated swing infinite"
+            className="ml-2 animate__animated animate__swing animate__infinite"
             icon={faDownload}
             style={{ color: "white" }}
           />
-        </Button>
+        </PortfolioButton>
+        <PortfolioButton variant="outline-light" className="">
+          COVER LETTER
+          <FontAwesomeIcon
+            className="ml-2 animate__animated animate__swing animate__infinite"
+            icon={faDownload}
+            style={{ color: "white" }}
+          />
+        </PortfolioButton>
       </div>
       <hr className="my-4" />
       <div className="pb-4">
@@ -48,5 +49,29 @@ export function Footer() {
         </a>
       </div>
     </footer>
+  );
+}
+
+interface PortfolioButtonProps extends ButtonProps {
+  trackingId?: string;
+}
+
+function PortfolioButton(props: PortfolioButtonProps) {
+  const [hover, setHover] = useState(false);
+  return (
+    <div 
+      onMouseOver={() => setHover(true)}
+      onMouseOut={() => setHover(false)}
+      style={{display:"inline"}}
+    >
+      <Button
+        {...props}
+        className={`${props.className} animate__animated ${
+            hover ? "animate__swing-soft animate__infinite" : ""
+          }`}
+      >
+        {props.children}
+      </Button>
+    </div>
   );
 }

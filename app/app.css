@@ -39,8 +39,8 @@ body {
 }
 .btn-outline-light:hover,
 .btn-outline-light:focus {
-  color: #000;
-  background-color: #fff;
+  color: #fff;
+  background-color: transparent;
   border-color: #fff;
 }
 
@@ -65,4 +65,29 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .font-small {
   font-size: .9rem;
+}
+
+@keyframes swing-soft {
+  20% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(-3deg);
+  }
+  60% {
+    transform: rotate(2deg);
+  }
+  80% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate__swing-soft {
+  animation-name: swing-soft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  transform-origin: top center;
 }
