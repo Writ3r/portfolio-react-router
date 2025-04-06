@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export function NavBar() {
-  const [scrolled, setScrolled] = useState<boolean>(true);
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +18,7 @@ export function NavBar() {
   }, []);
 
   return (
-    <Navbar expand="lg" className={`navbar-dark ${scrolled ? 'scrolled' : ''}`} fixed="top">
+    <Navbar expand="lg" className={`navbar-dark ${scrolled ? '' : 'toppage'}`} fixed="top">
       <Container style={{ backgroundColor: "" }}>
         <Navbar.Brand href="#home">
           <strong>Lucas Wing</strong>
