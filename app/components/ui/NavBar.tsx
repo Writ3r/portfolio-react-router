@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export function NavBar() {
   return (
@@ -41,6 +41,9 @@ export function NavBar() {
             </Nav.Link>
           </Nav>
           <Nav className="ml-auto">
+            <div className="nav-link top-nav-link">
+                <FontAwesomeIcon icon={faLinkedin} />
+            </div>
             <Nav.Link
               href="#link"
               className="top-nav-link border border-light rounded waves-effect waves-light"
