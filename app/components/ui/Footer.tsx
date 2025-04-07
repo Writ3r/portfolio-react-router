@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Button, type ButtonProps } from "react-bootstrap";
+import { Button} from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
