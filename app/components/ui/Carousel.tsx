@@ -81,6 +81,26 @@ export function PortfolioCarousel() {
           />
         </div>
       </CarouselItem>
+      <CarouselItem>
+        <div className="view">
+          <VideoBackground videoUrl={video}></VideoBackground>
+          <CarouselCenterInner
+            saying="Try, Try Again"
+            code='while ( ! ( succeed = try() ) );'
+            explination="Keep trying until you have an answer"
+          />
+        </div>
+      </CarouselItem>
+      <CarouselItem>
+        <div className="view">
+          <VideoBackground videoUrl={video}></VideoBackground>
+          <CarouselCenterInner
+            saying="Treat Your Future Self"
+            code='while ( away ) { Thread.sleep(1000); }'
+            explination="Put the work in now to save time later"
+          />
+        </div>
+      </CarouselItem>
     </Carousel>
   );
 }
