@@ -77,7 +77,7 @@ export function PortfolioCarousel() {
           <CarouselCenterInner
             saying="Keep It Simple, Silly"
             code="isEven = (x % 2 == 0)"
-            explination="Code does not care about complexity, but the maintainers do."
+            explination="Simple code is trivial to extend and maintain"
           />
         </div>
       </CarouselItem>
