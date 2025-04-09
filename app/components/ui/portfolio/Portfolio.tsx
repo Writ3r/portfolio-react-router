@@ -39,7 +39,7 @@ export function Portfolio() {
           <img src={pic} className="img-fluid z-depth-1-half" alt="" />
         </Col>
         <Col md="6" className="mb-4">
-          <h3 className="h3 mb-3">Portfolio</h3>
+          <h3 className="h3 mb-3">My Portfolio</h3>
           <p>
             Here's a bit about <strong>myself</strong>, my{" "}
             <strong>projects</strong>, and my <strong>experience</strong>.
@@ -55,7 +55,7 @@ export function Portfolio() {
               {" "}
               {yearsDiff(WORK_START_DATE, currTime).toLocaleString()}
             </strong>{" "}
-            years enterprise experience,
+            years enterprise experience, and
             <strong>
               {" "}
               {yearsDiff(BIRTHDAY, currTime).toLocaleString()}

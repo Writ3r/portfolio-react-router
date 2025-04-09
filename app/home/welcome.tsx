@@ -1,7 +1,6 @@
 import { Container } from "react-bootstrap";
 import { NavBar } from "~/components/ui/NavBar";
 import { Footer } from "~/components/ui/Footer";
-import { MainContent } from "~/components/ui/MainContent";
 import { PortfolioCarousel } from "~/components/ui/carousel/Carousel";
 import { Portfolio } from "~/components/ui/portfolio/Portfolio";
 
@@ -15,6 +14,7 @@ export function Welcome({ message }: { message: string }) {
         <main className="flex-grow-1">
           <Container>
             <Portfolio />
+            <hr />
           </Container>
         </main>
         <Footer />

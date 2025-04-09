@@ -58,7 +58,7 @@ const CarouselCenterInner = (props: CarouselCenterInnerInput) => {
         >
           SOURCE CODE
           <FontAwesomeIcon
-            className="ml-2 animate__animated animate__swing animate__infinite"
+            className="ml-2 animate__animated animate__tada animate__infinite"
             icon={faGraduationCap}
             style={{ color: "white" }}
           />
