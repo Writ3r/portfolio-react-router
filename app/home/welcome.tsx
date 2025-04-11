@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import { NavBar } from "~/components/ui/NavBar";
+import { NavBar } from "~/components/ui/topnav/NavBar";
 import { Footer } from "~/components/ui/Footer";
 import { PortfolioCarousel } from "~/components/ui/carousel/Carousel";
 import { Portfolio } from "~/components/ui/portfolio/Portfolio";

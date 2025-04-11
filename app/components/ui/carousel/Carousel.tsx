@@ -70,37 +70,39 @@ const CarouselCenterInner = (props: CarouselCenterInnerInput) => {
 
 export function PortfolioCarousel() {
   return (
-    <Carousel className="carouselPage">
-      <CarouselItem>
-        <div className="view">
-          <VideoBackground videoUrl={video}></VideoBackground>
-          <CarouselCenterInner
-            saying="Keep It Simple, Silly"
-            code="isEven = (x % 2 == 0)"
-            explination="Simple code is trivial to extend and maintain"
-          />
-        </div>
-      </CarouselItem>
-      <CarouselItem>
-        <div className="view">
-          <VideoBackground videoUrl={video}></VideoBackground>
-          <CarouselCenterInner
-            saying="Try, Try Again"
-            code='while ( ! ( succeed = try() ) );'
-            explination="Keep trying until you have an answer"
-          />
-        </div>
-      </CarouselItem>
-      <CarouselItem>
-        <div className="view">
-          <VideoBackground videoUrl={video}></VideoBackground>
-          <CarouselCenterInner
-            saying="Treat Your Future Self"
-            code='while ( away ) { Thread.sleep(1000); }'
-            explination="Put the work in now to save time later"
-          />
-        </div>
-      </CarouselItem>
-    </Carousel>
+    <section id="home" className="pageAnchor">
+      <Carousel className="carouselPage">
+        <CarouselItem>
+          <div className="view">
+            <VideoBackground videoUrl={video}></VideoBackground>
+            <CarouselCenterInner
+              saying="Keep It Simple, Silly"
+              code="isEven = (x % 2 == 0)"
+              explination="Simple code is trivial to extend and maintain"
+            />
+          </div>
+        </CarouselItem>
+        <CarouselItem>
+          <div className="view">
+            <VideoBackground videoUrl={video}></VideoBackground>
+            <CarouselCenterInner
+              saying="Try, Try Again"
+              code="while ( ! ( succeed = try() ) );"
+              explination="Keep trying until you have an answer"
+            />
+          </div>
+        </CarouselItem>
+        <CarouselItem>
+          <div className="view">
+            <VideoBackground videoUrl={video}></VideoBackground>
+            <CarouselCenterInner
+              saying="Treat Your Future Self"
+              code="while ( away ) { Thread.sleep(1000); }"
+              explination="Put the work in now to save time later"
+            />
+          </div>
+        </CarouselItem>
+      </Carousel>
+    </section>
   );
 }
