@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
+import {
+  faLaptopCode,
+  faPeopleCarry,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  FontAwesomeIcon,
+  type FontAwesomeIconProps,
+} from "@fortawesome/react-fontawesome";
 
 type Information = {
   startingPos: string;
@@ -52,7 +61,15 @@ export function Experience() {
             onSelect={(k) => setKey(k || "eng1")}
             className="lucas-tabs nav-justified"
           >
-            <Tab eventKey="eng1" title="BAE Systems - Senior Software Engineer">
+            <Tab
+              eventKey="eng1"
+              title={
+                <>
+                  <FontAwesomeIcon icon={faLaptopCode} color="indigo" className="animate__animated animate__jello animate__infinite" />{" "}BAE
+                  Systems - Senior Software Engineer
+                </>
+              }
+            >
               <ExperienceItem
                 info={{
                   startingPos: "Software Engineer 1 ",
@@ -67,7 +84,15 @@ export function Experience() {
                       In the cloud, I've learned the basics of code containerization, along with management and deployment of those containers."
               />
             </Tab>
-            <Tab eventKey="sumhelp" title="Marcellus Schools - Summer Help">
+            <Tab
+              eventKey="sumhelp"
+              title={
+                <>
+                  <FontAwesomeIcon icon={faPeopleCarry} color="blue" className="animate__animated animate__jello animate__infinite" />{" "}
+                  Marcellus Schools - Summer Help
+                </>
+              }
+            >
               <ExperienceItem
                 info={{
                   startingPos: "Summer Help",
@@ -81,7 +106,15 @@ export function Experience() {
                       programming is a more in-demand field in job market, doesn't make it any more of less of a job than that of custodial staff."
               />
             </Tab>
-            <Tab eventKey="worker" title="Beak And Skiff - Worker">
+            <Tab
+              eventKey="worker"
+              title={
+                <>
+                  <FontAwesomeIcon icon={faUsers} color="cyan" className="animate__animated animate__jello animate__infinite"/>{" "}
+                  Beak And Skiff - Worker
+                </>
+              }
+            >
               <ExperienceItem
                 info={{
                   startingPos: "Worker",
