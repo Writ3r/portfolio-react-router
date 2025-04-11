@@ -147,5 +147,38 @@ body, h1, h2, h3, h4, h5, h6 {
   font-size: .9rem;
 }
 
+/* arbitrary margin for about me items */
+.about-me-item {
+  margin-top: 30px;
+}
+
+/* arbitrary margin for skill items */
+.skills-item {
+  margin-top: 15px;
+}
+
+/* arbitrary margin for Projects */
+.projects-pills {
+  margin-bottom:20px;
+}
+
+/* arbitrary margin for tab pane headers */
+.tab-pane-container {
+  margin-top: 40px;
+}
+
+/* arbitrary margin for title headers */
+.title-margin {
+  margin-top: 20px;
+}
+
+.grey-text {
+  color: #828282!important;
+}
+
+.nav-tabs .nav-link {
+  color: #000000!important;
+}
+
 /* fun button shake */
 .btn:hover {animation: swing 1s linear .3s infinite;}

@@ -3,6 +3,8 @@ import { NavBar } from "~/components/ui/NavBar";
 import { Footer } from "~/components/ui/Footer";
 import { PortfolioCarousel } from "~/components/ui/carousel/Carousel";
 import { Portfolio } from "~/components/ui/portfolio/Portfolio";
+import { AboutMe } from "~/components/ui/aboutme/AboutMe";
+import { Experience } from "~/components/ui/experience/Experience";
 
 export function Welcome({ message }: { message: string }) {
   return (
@@ -14,7 +16,10 @@ export function Welcome({ message }: { message: string }) {
         <main className="flex-grow-1">
           <Container>
             <Portfolio />
-            <hr />
+            <hr className="my-5"/>
+            <AboutMe />
+            <hr className="my-5"/>
+            <Experience />
           </Container>
         </main>
         <Footer />
