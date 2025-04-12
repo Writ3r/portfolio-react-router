@@ -1,10 +1,11 @@
 import { Container } from "react-bootstrap";
 import { NavBar } from "~/components/ui/topnav/NavBar";
-import { Footer } from "~/components/ui/Footer";
+import { Footer } from "~/components/ui/footer/Footer";
 import { PortfolioCarousel } from "~/components/ui/carousel/Carousel";
 import { Portfolio } from "~/components/ui/portfolio/Portfolio";
 import { AboutMe } from "~/components/ui/aboutme/AboutMe";
 import { Experience } from "~/components/ui/experience/Experience";
+import { Skills } from "~/components/ui/skills/Skills";
 
 export function Welcome({ message }: { message: string }) {
   return (
@@ -20,6 +21,8 @@ export function Welcome({ message }: { message: string }) {
             <AboutMe />
             <hr className="my-5"/>
             <Experience />
+            <hr className="my-5"/>
+            <Skills />
           </Container>
         </main>
         <Footer />

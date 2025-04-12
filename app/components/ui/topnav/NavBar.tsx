@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export function NavBar() {
-  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(true);
   const [activeNav, setActiveNav] = useState<string>("home");
 
   useEffect(() => {
@@ -25,6 +25,7 @@ export function NavBar() {
         }
       });
     };
+    setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -47,7 +48,7 @@ export function NavBar() {
   return (
     <Navbar
       expand="lg"
-      className={`navbar-dark ${scrolled ? "scrolled" : ""}`}
+      className={`navbar-dark ${!scrolled ? "nav-at-top" : ""}`}
       fixed="top"
     >
       <Container style={{ backgroundColor: "" }}>
