@@ -6,6 +6,7 @@ import { Portfolio } from "~/components/ui/portfolio/Portfolio";
 import { AboutMe } from "~/components/ui/aboutme/AboutMe";
 import { Experience } from "~/components/ui/experience/Experience";
 import { Skills } from "~/components/ui/skills/Skills";
+import { Projects } from "~/components/ui/projects/Projects";
 
 export function Welcome({ message }: { message: string }) {
   return (
@@ -23,6 +24,8 @@ export function Welcome({ message }: { message: string }) {
             <Experience />
             <hr className="my-5"/>
             <Skills />
+            <hr className="my-5"/>
+            <Projects />
           </Container>
         </main>
         <Footer />

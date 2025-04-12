@@ -180,5 +180,15 @@ body, h1, h2, h3, h4, h5, h6 {
   color: #000000!important;
 }
 
+.lucas-pills.nav-pills .nav-link {
+  color: rgba(0,0,0,.9);
+  border: 1px solid #dee2e6 !important;
+}
+
+.lucas-pills.nav-pills .nav-link.active {
+  background-color: rgba(0,0,0,.8) !important;
+  color: rgba(255,255,255,.9)
+}
+
 /* fun button shake */
 .btn:hover {animation: swing 1s linear .3s infinite;}

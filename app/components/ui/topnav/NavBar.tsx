@@ -99,10 +99,10 @@ export function NavBar() {
               Skills
             </Nav.Link>
             <Nav.Link
-              href="#proj"
+              href="#projects"
               className="top-nav-link"
-              onClick={(e) => execMove(e,"proj")}
-              active={activeNav === "proj"}
+              onClick={(e) => execMove(e,"projects")}
+              active={activeNav === "projects"}
             >
               Projects
             </Nav.Link>
