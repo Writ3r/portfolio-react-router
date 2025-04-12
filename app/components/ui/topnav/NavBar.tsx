@@ -91,10 +91,10 @@ export function NavBar() {
               Experience
             </Nav.Link>
             <Nav.Link
-              href="#skill"
+              href="#skills"
               className="top-nav-link"
-              onClick={(e) => execMove(e,"skill")}
-              active={activeNav === "skill"}
+              onClick={(e) => execMove(e,"skills")}
+              active={activeNav === "skills"}
             >
               Skills
             </Nav.Link>
