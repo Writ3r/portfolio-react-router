@@ -1,5 +1,7 @@
 import { Row, Col } from "react-bootstrap";
 import pic from "./numberSmall.png";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type Description = {
   line1: string;
@@ -15,10 +17,15 @@ type SkillInput = {
 function SkillArea(props: SkillInput) {
   return (
     <Row>
-      <Col size="2">
-        <i className="fas fa-check-circle fa-2x indigo-text animated pulse infinite"></i>
+      <Col xs={2}>
+        <FontAwesomeIcon
+          className="ml-2 animate__animated animate__pulse animate__infinite"
+          icon={faCheckCircle}
+          style={{ color: "#3f51b5" }}
+          size="2x"
+        />
       </Col>
-      <Col size="10">
+      <Col xs={10}>
         <h6 className="feature-title">{props.name}</h6>
         <p className="grey-text">
           {props.desc.line1}

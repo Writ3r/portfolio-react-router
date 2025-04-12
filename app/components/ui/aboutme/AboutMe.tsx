@@ -46,7 +46,7 @@ export function AboutMe() {
           <Skill
             name="Engineer"
             desc="Engineering new and interesting projects is my jam. It's satisfying turning an idea into a design."
-            fontAwesomeIconProps={{ icon: faCode, size: "2x", color: "indigo" }}
+            fontAwesomeIconProps={{ icon: faCode, size: "2x", color: "#3f51b5" }}
           />
           <Skill
             name="Developer"
@@ -54,7 +54,7 @@ export function AboutMe() {
             fontAwesomeIconProps={{
               icon: faCodeBranch,
               size: "2x",
-              color: "blue",
+              color: "#2196f3",
             }}
           />
           <Skill
@@ -63,7 +63,7 @@ export function AboutMe() {
             fontAwesomeIconProps={{
               icon: faGraduationCap,
               size: "2x",
-              color: "cyan",
+              color: "#00bcd4",
             }}
           />
         </Col>
@@ -74,13 +74,13 @@ export function AboutMe() {
             fontAwesomeIconProps={{
               icon: faGamepad,
               size: "2x",
-              color: "indigo",
+              color: "#3f51b5",
             }}
           />
           <Skill
             name="Hiker"
             desc="Mountains, valleys, deserts, fields. Hiking is my preferred method to experience it all."
-            fontAwesomeIconProps={{ icon: faHiking, size: "2x", color: "blue" }}
+            fontAwesomeIconProps={{ icon: faHiking, size: "2x", color: "#2196f3" }}
           />
           <Skill
             name="Walker"
@@ -88,7 +88,7 @@ export function AboutMe() {
             fontAwesomeIconProps={{
               icon: faWalking,
               size: "2x",
-              color: "cyan",
+              color: "#00bcd4",
             }}
           />
         </Col>

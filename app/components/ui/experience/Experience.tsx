@@ -65,7 +65,7 @@ export function Experience() {
               eventKey="eng1"
               title={
                 <>
-                  <FontAwesomeIcon icon={faLaptopCode} color="indigo" className="animate__animated animate__jello animate__infinite" />{" "}BAE
+                  <FontAwesomeIcon icon={faLaptopCode} color="#3f51b5" className="animate__animated animate__jello animate__infinite" />{" "}BAE
                   Systems - Senior Software Engineer
                 </>
               }
@@ -88,7 +88,7 @@ export function Experience() {
               eventKey="sumhelp"
               title={
                 <>
-                  <FontAwesomeIcon icon={faPeopleCarry} color="blue" className="animate__animated animate__jello animate__infinite" />{" "}
+                  <FontAwesomeIcon icon={faPeopleCarry} color="#2196f3" className="animate__animated animate__jello animate__infinite" />{" "}
                   Marcellus Schools - Summer Help
                 </>
               }
@@ -110,7 +110,7 @@ export function Experience() {
               eventKey="worker"
               title={
                 <>
-                  <FontAwesomeIcon icon={faUsers} color="cyan" className="animate__animated animate__jello animate__infinite"/>{" "}
+                  <FontAwesomeIcon icon={faUsers} color="#00bcd4" className="animate__animated animate__jello animate__infinite"/>{" "}
                   Beak And Skiff - Worker
                 </>
               }
