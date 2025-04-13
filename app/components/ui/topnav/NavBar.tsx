@@ -50,8 +50,9 @@ export function NavBar() {
   ];
 
   const [scrolled, setScrolled] = useState<boolean>(true);
-  const [activeNav, setActiveNav] = useState<string>("home");
+  const [activeNav, setActiveNav] = useState<string>(HOME_ID);
 
+  // checks if an element is in view
   const eleIsInView = (el: HTMLElement) => {
     const box = el.getBoundingClientRect();
     return box.top <= window.innerHeight && box.bottom >= 0;
