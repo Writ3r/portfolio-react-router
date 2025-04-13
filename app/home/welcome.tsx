@@ -1,12 +1,12 @@
 import { Container } from "react-bootstrap";
 import { NavBar } from "~/components/ui/topnav/NavBar";
 import { Footer } from "~/components/ui/footer/Footer";
-import { PortfolioCarousel } from "~/components/ui/carousel/Carousel";
-import { Portfolio } from "~/components/ui/portfolio/Portfolio";
-import { AboutMe } from "~/components/ui/aboutme/AboutMe";
-import { Experience } from "~/components/ui/experience/Experience";
-import { Skills } from "~/components/ui/skills/Skills";
-import { Projects } from "~/components/ui/projects/Projects";
+import { PortfolioCarousel } from "~/home/carousel/Carousel";
+import { Portfolio } from "~/home/portfolio/Portfolio";
+import { AboutMe } from "~/home/aboutme/AboutMe";
+import { Experience } from "~/home/experience/Experience";
+import { Skills } from "~/home/skills/Skills";
+import { Projects } from "~/home/projects/Projects";
 
 export function Welcome({ message }: { message: string }) {
   return (
