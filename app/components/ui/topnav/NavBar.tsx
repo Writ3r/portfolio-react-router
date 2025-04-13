@@ -9,17 +9,40 @@ export function NavBar() {
   const [scrolled, setScrolled] = useState<boolean>(true);
   const [activeNav, setActiveNav] = useState<string>("home");
 
+  const eleIsInView = (el: HTMLElement) => {
+    const box = el.getBoundingClientRect();
+    return box.top <= window.innerHeight && box.bottom >= 0;
+  };
+
+  // determine if last ele in view (edge case of last nav tab not triggering active)
+  const lastFooterEleInView = () => {
+    let footerInView = false;
+    const footer = document.querySelector("footer");
+    if (footer) {
+      const lastChild = footer.lastElementChild;
+      if (lastChild) {
+        footerInView = true ? footer && eleIsInView(footer) : false;
+      }
+    }
+    return footerInView;
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       // handles setting the nav bar to be transparent if at the top of the page
       const offset = window.scrollY;
       setScrolled(offset > 10);
       // logic to work out what page anchor should be considered active
-      // TODO: just search for each id we care about...
-      var section = document.querySelectorAll(".pageAnchor");
-      section.forEach(function (e, i) {
+      const lastEleInView = lastFooterEleInView()
+      const sections = document.querySelectorAll(".pageAnchor");
+      sections.forEach(function (e, i) {
         if (e instanceof HTMLElement) {
-          if (e.offsetTop - 100 <= offset) {
+          // hack to fix setting last section to active since page can't scroll that far
+          if (lastEleInView && i == sections.length - 1) {
+            setActiveNav(e.id);
+          }
+          // normal logic case of if the scroll hits a new section, it will be set as active in nav bar
+          else if (e.offsetTop - 100 <= offset) {
             setActiveNav(e.id);
           }
         }
@@ -40,10 +63,13 @@ export function NavBar() {
     }, 100);
   };
 
-  const execMove = (e: React.MouseEvent<HTMLElement, MouseEvent>, location:string) => {
-      e.preventDefault();
-      moveToLocation(location);
-    };
+  const execMove = (
+    e: React.MouseEvent<HTMLElement, MouseEvent>,
+    location: string
+  ) => {
+    e.preventDefault();
+    moveToLocation(location);
+  };
 
   return (
     <Navbar
@@ -61,7 +87,7 @@ export function NavBar() {
             <Nav.Link
               href="#home"
               className="top-nav-link"
-              onClick={(e) => execMove(e,"home")}
+              onClick={(e) => execMove(e, "home")}
               active={activeNav === "home"}
             >
               Home
@@ -69,7 +95,7 @@ export function NavBar() {
             <Nav.Link
               href="#portfolio"
               className="top-nav-link"
-              onClick={(e) => execMove(e,"portfolio")}
+              onClick={(e) => execMove(e, "portfolio")}
               active={activeNav === "portfolio"}
             >
               Portfolio
@@ -77,7 +103,7 @@ export function NavBar() {
             <Nav.Link
               href="#about"
               className="top-nav-link"
-              onClick={(e) => execMove(e,"about")}
+              onClick={(e) => execMove(e, "about")}
               active={activeNav === "about"}
             >
               About
@@ -85,7 +111,7 @@ export function NavBar() {
             <Nav.Link
               href="#experience"
               className="top-nav-link"
-              onClick={(e) => execMove(e,"experience")}
+              onClick={(e) => execMove(e, "experience")}
               active={activeNav === "experience"}
             >
               Experience
@@ -93,7 +119,7 @@ export function NavBar() {
             <Nav.Link
               href="#skills"
               className="top-nav-link"
-              onClick={(e) => execMove(e,"skills")}
+              onClick={(e) => execMove(e, "skills")}
               active={activeNav === "skills"}
             >
               Skills
@@ -101,7 +127,7 @@ export function NavBar() {
             <Nav.Link
               href="#projects"
               className="top-nav-link"
-              onClick={(e) => execMove(e,"projects")}
+              onClick={(e) => execMove(e, "projects")}
               active={activeNav === "projects"}
             >
               Projects
