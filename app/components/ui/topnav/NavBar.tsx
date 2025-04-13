@@ -16,15 +16,8 @@ export function NavBar() {
 
   // determine if last ele in view (edge case of last nav tab not triggering active)
   const lastFooterEleInView = () => {
-    let footerInView = false;
-    const footer = document.querySelector("footer");
-    if (footer) {
-      const lastChild = footer.lastElementChild;
-      if (lastChild) {
-        footerInView = true ? footer && eleIsInView(footer) : false;
-      }
-    }
-    return footerInView;
+    const footer = document.querySelector("footer")
+    return footer ? eleIsInView(footer) : false;
   };
 
   useEffect(() => {
