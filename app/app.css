@@ -190,5 +190,7 @@ body, h1, h2, h3, h4, h5, h6 {
   color: rgba(255,255,255,.9)
 }
 
+.custom-link:hover { cursor:pointer }
+
 /* fun button shake */
 .btn:hover {animation: swing 1s linear .3s infinite;}

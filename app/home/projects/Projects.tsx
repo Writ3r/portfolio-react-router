@@ -28,6 +28,8 @@ import {
   faTrophy,
   faTShirt,
   faUsers,
+  faLink,
+  faFolderOpen,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   FontAwesomeIcon,
@@ -60,6 +62,7 @@ type ProjectInput = {
 function ProjectPictureGallery(
   props: PropsWithChildren<{
     show: boolean;
+    title: string;
     handleShow: () => void;
     handleClose: () => void;
   }>
@@ -67,19 +70,14 @@ function ProjectPictureGallery(
   return (
     <Modal show={props.show} onHide={props.handleClose} size="lg">
       <ModalHeader closeButton>
-        <ModalTitle>Modal title</ModalTitle>
+        <ModalTitle>{props.title}</ModalTitle>
       </ModalHeader>
-
       <ModalBody>
         <Carousel indicators={false}>{props.children}</Carousel>
       </ModalBody>
-
       <ModalFooter>
         <Button variant="secondary" onClick={props.handleClose}>
           Close
-        </Button>
-        <Button variant="primary" onClick={props.handleClose}>
-          Save Changes
         </Button>
       </ModalFooter>
     </Modal>
@@ -111,14 +109,19 @@ const Project = (props: ProjectInput) => {
       <h5 className="feature-title title-margin">Resources</h5>
       <p>
         {props.children}
-        <a className="custom-link" onClick={() => setShowModal(true)}>
-          <i className="fas fa-folder-open ml-2 animated pulse infinite"></i>{" "}
+        <a onClick={() => setShowModal(true)} className="custom-link">
+          <FontAwesomeIcon
+            icon={faFolderOpen}
+            color="black"
+            className="animate__animated animate__pulse animate__infinite mr-2"
+          />
           Pictures
         </a>
       </p>
       <h5 className="feature-title title-margin">Concluding Thoughts</h5>
       <p className="grey-text">{props.conclusion}</p>
       <ProjectPictureGallery
+        title={props.info.projName}
         show={showModal}
         handleClose={() => setShowModal(false)}
         handleShow={() => setShowModal(true)}
@@ -275,7 +278,11 @@ export function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fas fa-link ml-2 animated pulse infinite"></i>{" "}
+                    <FontAwesomeIcon
+                      icon={faLink}
+                      color="black"
+                      className="animate__animated animate__pulse animate__infinite mr-2"
+                    />
                     Website
                   </a>
                   <br />
@@ -299,7 +306,7 @@ export function Projects() {
                   ]}
                   conclusion="Our small team did well at this project. It was a great learning experience for us
                           to refine our Java skills before moving into the professional world."
-                  pics={[clothesClosetMenue, clothesClosetItem]}
+                  pics={[]}
                 >
                   <a
                     className="custom-link"
@@ -307,7 +314,11 @@ export function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fas fa-link ml-2 animated pulse infinite"></i>{" "}
+                    <FontAwesomeIcon
+                      icon={faLink}
+                      color="black"
+                      className="animate__animated animate__pulse animate__infinite mr-2"
+                    />
                     Github
                   </a>
                   <br />
@@ -317,7 +328,11 @@ export function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fas fa-link ml-2 animated pulse infinite"></i>{" "}
+                    <FontAwesomeIcon
+                      icon={faLink}
+                      color="black"
+                      className="animate__animated animate__pulse animate__infinite mr-2"
+                    />
                     ERD
                   </a>
                   <br />
@@ -327,7 +342,11 @@ export function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fas fa-link ml-2 animated pulse infinite"></i>{" "}
+                    <FontAwesomeIcon
+                      icon={faLink}
+                      color="black"
+                      className="animate__animated animate__pulse animate__infinite mr-2"
+                    />
                     Use Cases
                   </a>
                   <br />
@@ -337,7 +356,11 @@ export function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fas fa-link ml-2 animated pulse infinite"></i>{" "}
+                    <FontAwesomeIcon
+                      icon={faLink}
+                      color="black"
+                      className="animate__animated animate__pulse animate__infinite mr-2"
+                    />
                     Sequence Diagrams
                   </a>
                   <br />
@@ -347,7 +370,11 @@ export function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fas fa-link ml-2 animated pulse infinite"></i>{" "}
+                    <FontAwesomeIcon
+                      icon={faLink}
+                      color="black"
+                      className="animate__animated animate__pulse animate__infinite mr-2"
+                    />
                     State Diagram
                   </a>
                   <br />
@@ -372,7 +399,7 @@ export function Projects() {
                   conclusion="This was a great first project to familiarize us with the inner-workings and design process
                           for client-side technologies. It was definetly rough by professional standards, but this
                           was primarily a learning experience."
-                  pics={[]}
+                  pics={[clothesClosetMenue, clothesClosetItem]}
                 >
                   <a
                     className="custom-link"
@@ -380,7 +407,11 @@ export function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fas fa-link ml-2 animated pulse infinite"></i>{" "}
+                    <FontAwesomeIcon
+                      icon={faLink}
+                      color="black"
+                      className="animate__animated animate__pulse animate__infinite mr-2"
+                    />
                     Github
                   </a>
                   <br />
@@ -390,7 +421,11 @@ export function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fas fa-link ml-2 animated pulse infinite"></i>{" "}
+                    <FontAwesomeIcon
+                      icon={faLink}
+                      color="black"
+                      className="animate__animated animate__pulse animate__infinite mr-2"
+                    />
                     Use Cases
                   </a>
                   <br />
@@ -400,7 +435,11 @@ export function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fas fa-link ml-2 animated pulse infinite"></i>{" "}
+                    <FontAwesomeIcon
+                      icon={faLink}
+                      color="black"
+                      className="animate__animated animate__pulse animate__infinite mr-2"
+                    />
                     Sequence Diagrams
                   </a>
                   <br />
@@ -410,7 +449,11 @@ export function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fas fa-link ml-2 animated pulse infinite"></i>{" "}
+                    <FontAwesomeIcon
+                      icon={faLink}
+                      color="black"
+                      className="animate__animated animate__pulse animate__infinite mr-2"
+                    />
                     State Diagram
                   </a>
                   <br />
