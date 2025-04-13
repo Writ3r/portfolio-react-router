@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, type PropsWithChildren } from "react";
 import {
   Nav,
   Row,
@@ -8,6 +8,15 @@ import {
   NavLink,
   TabContent,
   TabPane,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+  ModalDialog,
+  Button,
+  Carousel,
+  CarouselItem,
 } from "react-bootstrap";
 import {
   faSolarPanel,
@@ -24,6 +33,9 @@ import {
   FontAwesomeIcon,
   type FontAwesomeIconProps,
 } from "@fortawesome/react-fontawesome";
+
+import clothesClosetItem from "./clothescloset/ClothesClosetItem.png";
+import clothesClosetMenue from "./clothescloset/ClothesClosetMainMenue.png";
 
 type Technology = {
   name: string;
@@ -45,9 +57,39 @@ type ProjectInput = {
   pics: string[];
 };
 
-const Project = (props: ProjectInput) => {
+function ProjectPictureGallery(
+  props: PropsWithChildren<{
+    show: boolean;
+    handleShow: () => void;
+    handleClose: () => void;
+  }>
+) {
   return (
-    <div>
+    <Modal show={props.show} onHide={props.handleClose} size="lg">
+      <ModalHeader closeButton>
+        <ModalTitle>Modal title</ModalTitle>
+      </ModalHeader>
+
+      <ModalBody>
+        <Carousel indicators={false}>{props.children}</Carousel>
+      </ModalBody>
+
+      <ModalFooter>
+        <Button variant="secondary" onClick={props.handleClose}>
+          Close
+        </Button>
+        <Button variant="primary" onClick={props.handleClose}>
+          Save Changes
+        </Button>
+      </ModalFooter>
+    </Modal>
+  );
+}
+
+const Project = (props: ProjectInput) => {
+  const [showModal, setShowModal] = useState(false);
+  return (
+    <>
       <h5 className="feature-title">Information</h5>
       <p className="grey-text">
         <strong>Project Name:</strong> {props.info.projName} <br />
@@ -69,14 +111,27 @@ const Project = (props: ProjectInput) => {
       <h5 className="feature-title title-margin">Resources</h5>
       <p>
         {props.children}
-        <a className="custom-link">
+        <a className="custom-link" onClick={() => setShowModal(true)}>
           <i className="fas fa-folder-open ml-2 animated pulse infinite"></i>{" "}
           Pictures
         </a>
       </p>
       <h5 className="feature-title title-margin">Concluding Thoughts</h5>
       <p className="grey-text">{props.conclusion}</p>
-    </div>
+      <ProjectPictureGallery
+        show={showModal}
+        handleClose={() => setShowModal(false)}
+        handleShow={() => setShowModal(true)}
+      >
+        {props.pics.map((pic, index) => {
+          return (
+            <CarouselItem>
+              <img className="d-block w-100" src={pic} alt="..." />
+            </CarouselItem>
+          );
+        })}
+      </ProjectPictureGallery>
+    </>
   );
 };
 
@@ -244,7 +299,7 @@ export function Projects() {
                   ]}
                   conclusion="Our small team did well at this project. It was a great learning experience for us
                           to refine our Java skills before moving into the professional world."
-                  pics={[]}
+                  pics={[clothesClosetMenue, clothesClosetItem]}
                 >
                   <a
                     className="custom-link"
