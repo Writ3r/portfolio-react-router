@@ -43,6 +43,11 @@ import ksspeMain from "./ksspe/KSSPEMainMenueBetter.png";
 import masterPlanAbout from "./masterplan/About.png";
 import masterPlanDash from "./masterplan/MasterDashboard.png";
 import masterPlanAssets from "./masterplan/Assets.png";
+import ksspeERD from "./ksspe/ERD.jpeg";
+import ksspeSeq from "./ksspe/KSSPECompletedSeqDiagrams.pdf";
+import ksspeState from "./ksspe/State.jpg";
+import clothesSeq from "./clothescloset/Team6-Sequence.pdf";
+import clothesState from "./clothescloset/stateDiagram.jpg";
 
 type Technology = {
   name: string;
@@ -329,7 +334,7 @@ export function Projects() {
                   <br />
                   <a
                     className="custom-link"
-                    href=""
+                    href={ksspeERD}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -357,7 +362,7 @@ export function Projects() {
                   <br />
                   <a
                     className="custom-link"
-                    href=""
+                    href={ksspeSeq}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -371,7 +376,7 @@ export function Projects() {
                   <br />
                   <a
                     className="custom-link"
-                    href=""
+                    href={ksspeState}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -436,7 +441,7 @@ export function Projects() {
                   <br />
                   <a
                     className="custom-link"
-                    href=""
+                    href={clothesSeq}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -450,7 +455,7 @@ export function Projects() {
                   <br />
                   <a
                     className="custom-link"
-                    href=""
+                    href={clothesState}
                     target="_blank"
                     rel="noreferrer"
                   >
