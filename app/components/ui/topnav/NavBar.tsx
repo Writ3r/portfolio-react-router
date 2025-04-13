@@ -108,7 +108,7 @@ export function NavBar() {
       className={`navbar-dark ${!scrolled ? "nav-at-top" : ""}`}
       fixed="top"
     >
-      <Container style={{ backgroundColor: "" }}>
+      <Container>
         <Navbar.Brand href="#home">
           <strong>Lucas Wing</strong>
         </Navbar.Brand>
@@ -160,12 +160,19 @@ export function NavBar() {
           </Nav>
           <Nav className="ml-auto">
             <div style={{ display: "flex" }}>
-              <Nav.Link className="top-nav-link">
+              <Nav.Link
+                className="top-nav-link"
+                href="https://www.linkedin.com/in/lucas-wing-314894104/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon icon={faLinkedin} />
               </Nav.Link>
               <Nav.Link
-                href="#link"
-                className="top-nav-link border border-light rounded waves-effect waves-light"
+                href="https://github.com/Writ3r"
+                className="top-nav-link border border-light rounded"
+                target="_blank"
+                rel="noreferrer"
               >
                 <FontAwesomeIcon icon={faGithub} className="mr-2" /> GitHub
               </Nav.Link>
