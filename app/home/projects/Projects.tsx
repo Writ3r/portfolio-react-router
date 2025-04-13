@@ -38,6 +38,11 @@ import {
 
 import clothesClosetItem from "./clothescloset/ClothesClosetItem.png";
 import clothesClosetMenue from "./clothescloset/ClothesClosetMainMenue.png";
+import ksspeLogin from "./ksspe/LoginScreen.png";
+import ksspeMain from "./ksspe/KSSPEMainMenueBetter.png";
+import masterPlanAbout from "./masterplan/About.png";
+import masterPlanDash from "./masterplan/MasterDashboard.png";
+import masterPlanAssets from "./masterplan/Assets.png";
 
 type Technology = {
   name: string;
@@ -129,7 +134,7 @@ const Project = (props: ProjectInput) => {
         {props.pics.map((pic, index) => {
           return (
             <CarouselItem>
-              <img className="d-block w-100" src={pic} alt="..." />
+              <img className="d-block w-100" style={{height:"570px"}} src={pic} alt="..." />
             </CarouselItem>
           );
         })}
@@ -270,7 +275,7 @@ export function Projects() {
                             Was it optimal? No. Is there a lot of bugs? Probabily. But it served its purpose.
                             In the next few years at some point I'll likely come back and revamp this project.
                             The underlying idea is good, it just needs better execution and functionality."
-                  pics={[]}
+                  pics={[masterPlanDash, masterPlanAbout, masterPlanAssets]}
                 >
                   <a
                     className="custom-link"
@@ -306,7 +311,7 @@ export function Projects() {
                   ]}
                   conclusion="Our small team did well at this project. It was a great learning experience for us
                           to refine our Java skills before moving into the professional world."
-                  pics={[]}
+                  pics={[ksspeLogin, ksspeMain]}
                 >
                   <a
                     className="custom-link"
