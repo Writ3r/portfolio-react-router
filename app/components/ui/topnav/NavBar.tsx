@@ -1,11 +1,54 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type PropsWithChildren } from "react";
 import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
+function PortfolioNavLink(
+  props: PropsWithChildren<{
+    id: string;
+    activeNavId: string;
+    execMove: (id: string) => void;
+  }>
+) {
+  const clickedLink = (
+    e: React.MouseEvent<HTMLElement, MouseEvent>,
+    location: string
+  ) => {
+    e.preventDefault();
+    props.execMove(location);
+  };
+
+  return (
+    <Nav.Link
+      href={`#${props.id}`}
+      className="top-nav-link"
+      onClick={(e) => clickedLink(e, props.id)}
+      active={props.activeNavId === props.id}
+    >
+      {props.children}
+    </Nav.Link>
+  );
+}
+
 export function NavBar() {
+  const HOME_ID = "home";
+  const PORTFOLIO_ID = "portfolio";
+  const ABOUT_ID = "about";
+  const EXPERIENCE_ID = "experience";
+  const SKILLS_ID = "skills";
+  const PROJECTS_ID = "projects";
+
+  const NAV_TABS = [
+    HOME_ID,
+    PORTFOLIO_ID,
+    ABOUT_ID,
+    EXPERIENCE_ID,
+    SKILLS_ID,
+    PROJECTS_ID,
+  ];
+
   const [scrolled, setScrolled] = useState<boolean>(true);
   const [activeNav, setActiveNav] = useState<string>("home");
 
@@ -16,7 +59,7 @@ export function NavBar() {
 
   // determine if last ele in view (edge case of last nav tab not triggering active)
   const lastFooterEleInView = () => {
-    const footer = document.querySelector("footer")
+    const footer = document.querySelector("footer");
     return footer ? eleIsInView(footer) : false;
   };
 
@@ -26,18 +69,17 @@ export function NavBar() {
       const offset = window.scrollY;
       setScrolled(offset > 10);
       // logic to work out what page anchor should be considered active
-      const lastEleInView = lastFooterEleInView()
-      const sections = document.querySelectorAll(".pageAnchor");
-      sections.forEach(function (e, i) {
-        if (e instanceof HTMLElement) {
-          // hack to fix setting last section to active since page can't scroll that far
-          if (lastEleInView && i == sections.length - 1) {
-            setActiveNav(e.id);
-          }
-          // normal logic case of if the scroll hits a new section, it will be set as active in nav bar
-          else if (e.offsetTop - 100 <= offset) {
-            setActiveNav(e.id);
-          }
+      const lastEleInView = lastFooterEleInView();
+      // hack to fix setting last section to active since page can't scroll that far
+      if (lastEleInView) {
+        setActiveNav(PROJECTS_ID);
+        return;
+      }
+      NAV_TABS.forEach(function (e) {
+        const navElement = document.getElementById(e);
+        // normal logic case of if the scroll hits a new section, it will be set as active in nav bar
+        if (navElement && navElement.offsetTop - 100 <= offset) {
+          setActiveNav(e);
         }
       });
     };
@@ -56,11 +98,7 @@ export function NavBar() {
     }, 100);
   };
 
-  const execMove = (
-    e: React.MouseEvent<HTMLElement, MouseEvent>,
-    location: string
-  ) => {
-    e.preventDefault();
+  const execMove = (location: string) => {
     moveToLocation(location);
   };
 
@@ -77,54 +115,48 @@ export function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link
-              href="#home"
-              className="top-nav-link"
-              onClick={(e) => execMove(e, "home")}
-              active={activeNav === "home"}
+            <PortfolioNavLink
+              id={HOME_ID}
+              activeNavId={activeNav}
+              execMove={execMove}
             >
               Home
-            </Nav.Link>
-            <Nav.Link
-              href="#portfolio"
-              className="top-nav-link"
-              onClick={(e) => execMove(e, "portfolio")}
-              active={activeNav === "portfolio"}
+            </PortfolioNavLink>
+            <PortfolioNavLink
+              id={PORTFOLIO_ID}
+              activeNavId={activeNav}
+              execMove={execMove}
             >
               Portfolio
-            </Nav.Link>
-            <Nav.Link
-              href="#about"
-              className="top-nav-link"
-              onClick={(e) => execMove(e, "about")}
-              active={activeNav === "about"}
+            </PortfolioNavLink>
+            <PortfolioNavLink
+              id={ABOUT_ID}
+              activeNavId={activeNav}
+              execMove={execMove}
             >
               About
-            </Nav.Link>
-            <Nav.Link
-              href="#experience"
-              className="top-nav-link"
-              onClick={(e) => execMove(e, "experience")}
-              active={activeNav === "experience"}
+            </PortfolioNavLink>
+            <PortfolioNavLink
+              id={EXPERIENCE_ID}
+              activeNavId={activeNav}
+              execMove={execMove}
             >
               Experience
-            </Nav.Link>
-            <Nav.Link
-              href="#skills"
-              className="top-nav-link"
-              onClick={(e) => execMove(e, "skills")}
-              active={activeNav === "skills"}
+            </PortfolioNavLink>
+            <PortfolioNavLink
+              id={SKILLS_ID}
+              activeNavId={activeNav}
+              execMove={execMove}
             >
               Skills
-            </Nav.Link>
-            <Nav.Link
-              href="#projects"
-              className="top-nav-link"
-              onClick={(e) => execMove(e, "projects")}
-              active={activeNav === "projects"}
+            </PortfolioNavLink>
+            <PortfolioNavLink
+              id={PROJECTS_ID}
+              activeNavId={activeNav}
+              execMove={execMove}
             >
               Projects
-            </Nav.Link>
+            </PortfolioNavLink>
           </Nav>
           <Nav className="ml-auto">
             <div style={{ display: "flex" }}>
