@@ -68,25 +68,6 @@ html {
   cursor: default;
 }
 
-.top-nav-link.active {
-  background-color: rgba(255,255,255,.1);
-}
-.top-nav-link {
-  color: rgb(255, 255, 255);
-  font-weight: 300;
-}
-.navbar.nav-at-top {
-  transition: all 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.2); /* translucent by default */
-  padding: 1rem 1rem; /* expanded */
-  backdrop-filter: blur(6px); /* optional, glass-like */
-}
-.navbar {
-  background-color: rgba(28, 35, 49, 0.95); /* solid when scrolled */
-  padding: 0.5rem 1rem; /* shrinks */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* subtle shadow */
-}
-
 .btn {
   margin: .375rem;
   color: inherit;
@@ -202,6 +183,34 @@ body, h1, h2, h3, h4, h5, h6 {
 /* for all fa icons to be the same white */
 .fa-white-icon {
   color: "white"
+}
+
+/* ========== TOP NAV SPECIFIC ========== */
+
+/* active top nav link style */
+.top-nav-link.active {
+  background-color: rgba(255,255,255,.1);
+}
+
+/* fixing colors of top nav links to be brighter */
+.top-nav-link {
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+}
+
+/* when user is scrolled up at very top of the page, make the nav partially invisible */
+.navbar.nav-at-top {
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.2); /* translucent by default */
+  padding: 1rem 1rem; /* expanded */
+  backdrop-filter: blur(6px); /* optional, glass-like */
+}
+
+/* normal nav style */
+.navbar {
+  background-color: rgba(28, 35, 49, 0.95); /* solid when scrolled */
+  padding: 0.5rem 1rem; /* shrinks */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* subtle shadow */
 }
 
 /* ========== FOOTER SPECIFIC ========== */
