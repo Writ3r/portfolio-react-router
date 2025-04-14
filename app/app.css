@@ -191,9 +191,9 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* ========== GENERAL ========== */
 
-
-/* fixes cursor to be the hand pointer for modal opens */
+/* fixes cursor to be the hand pointer for project modal opens */
 .custom-link:hover { cursor:pointer }
 
 /* fun button shake */
@@ -204,7 +204,9 @@ body, h1, h2, h3, h4, h5, h6 {
   color: "white"
 }
 
-/* gives footer its background color */
+/* ========== FOOTER SPECIFIC ========== */
+
+/* gives footer its notable background color */
 footer {
   background-color: #1c2331;
 }
