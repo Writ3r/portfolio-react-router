@@ -7,15 +7,25 @@ export function Footer() {
   return (
     <footer className="text-center font-small mt-4 page-footer">
       <div className="pt-4">
-        <Button variant="outline-light">
-          COVER LETTER
+        <Button
+          variant="outline-light"
+          href="https://docs.google.com/document/d/1XRYsCeIkxK-lsZblag1_hA39kfoHJFjL-Tlo2_ZkGwE/edit?usp=sharing"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Resume Doc
           <FontAwesomeIcon
             className="ml-2 fa-white-icon animate__animated animate__swing animate__infinite"
             icon={faDownload}
           />
         </Button>
-        <Button variant="outline-light">
-          COVER LETTER
+        <Button
+          variant="outline-light"
+          href="https://docs.google.com/document/d/1ca1rWlQpQJGOK2GYhp-mz5E8NWMic65b9PZSQFZu1Ss/edit?usp=sharing"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Cover Letter
           <FontAwesomeIcon
             className="ml-2 fa-white-icon animate__animated animate__swing animate__infinite"
             icon={faDownload}

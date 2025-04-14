@@ -134,10 +134,6 @@ footer.page-footer a {
   color: #fff;
 }
 
-footer {
-  background-color: #1c2331;
-}
-
 a, a:hover {
   text-decoration: none;
   transition: all .2s ease-in-out;
@@ -194,11 +190,21 @@ body, h1, h2, h3, h4, h5, h6 {
   color: rgba(255,255,255,.9)
 }
 
+
+
+
+/* fixes cursor to be the hand pointer for modal opens */
 .custom-link:hover { cursor:pointer }
 
 /* fun button shake */
 .btn:hover {animation: swing 1s linear .3s infinite;}
 
+/* for all fa icons to be the same white */
 .fa-white-icon {
   color: "white"
+}
+
+/* gives footer its background color */
+footer {
+  background-color: #1c2331;
 }
