@@ -78,7 +78,7 @@ function ProjectPictureGallery(
   }>
 ) {
   return (
-    <Modal show={props.show} onHide={props.handleClose} size="lg">
+    <Modal show={props.show} onHide={props.handleClose} size="lg" key={props.title}>
       <ModalHeader closeButton>
         <ModalTitle>{props.title}</ModalTitle>
       </ModalHeader>
@@ -107,15 +107,15 @@ const Project = (props: ProjectInput) => {
       <h5 className="feature-title title-margin">Overview</h5>
       <p className="grey-text">{props.overview}</p>
       <h5 className="feature-title title-margin">Technologies</h5>
-      <p className="grey-text">
+      <div className="grey-text">
         {props.tech.map((tech) => {
           return (
-            <div>
+            <div key={tech.name}>
               <strong>{tech.name}:</strong> {tech.desc} <br />
             </div>
           );
         })}
-      </p>
+      </div>
       <h5 className="feature-title title-margin">Resources</h5>
       <p>
         {props.children}
@@ -138,7 +138,7 @@ const Project = (props: ProjectInput) => {
       >
         {props.pics.map((pic, index) => {
           return (
-            <CarouselItem>
+            <CarouselItem key={index}>
               <img className="d-block w-100" style={{height:"570px"}} src={pic} alt="..." />
             </CarouselItem>
           );

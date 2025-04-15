@@ -36,7 +36,11 @@ export function Portfolio() {
     <section id="portfolio">
       <Row>
         <Col md="6" className="mb-4">
-          <img src={pic} className="img-fluid z-depth-1-half" alt="" />
+          <img
+            src={pic}
+            className="img-fluid z-depth-1-half"
+            alt="engineer programming on a laptop"
+          />
         </Col>
         <Col md="6" className="mb-4">
           <h3 className="h3 mb-3">My Portfolio</h3>
