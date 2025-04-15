@@ -3,6 +3,7 @@ import { Row, Col, Button } from "react-bootstrap";
 import pic from "./work-731198_1920.jpg";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { RESUME_URL, COVER_LETTER_URL } from "~/components/ui/constants";
 
 const BIRTHDAY = new Date(1997, 1, 18);
 const PROJECT_START_DATE = new Date(2017, 8, 1);
@@ -74,7 +75,7 @@ export function Portfolio() {
           <Button
             target="_blank"
             rel="noreferrer"
-            href="https://docs.google.com/document/d/1XRYsCeIkxK-lsZblag1_hA39kfoHJFjL-Tlo2_ZkGwE/edit?usp=sharing"
+            href={RESUME_URL}
             className="btn-grey"
           >
             RESUME DOC
@@ -87,7 +88,7 @@ export function Portfolio() {
           <Button
             target="_blank"
             rel="noreferrer"
-            href="https://docs.google.com/document/d/1ca1rWlQpQJGOK2GYhp-mz5E8NWMic65b9PZSQFZu1Ss/edit?usp=sharing"
+            href={COVER_LETTER_URL}
             color="grey"
             className="btn-grey"
           >

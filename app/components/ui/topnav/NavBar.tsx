@@ -4,6 +4,7 @@ import { Nav } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { GITHUB_URL, LINKEDIN_URL } from "~/components/ui/constants";
 
 function PortfolioNavLink(
   props: PropsWithChildren<{
@@ -163,14 +164,14 @@ export function NavBar() {
             <div style={{ display: "flex" }}>
               <Nav.Link
                 className="top-nav-link"
-                href="https://www.linkedin.com/in/lucas-wing-314894104/"
+                href={LINKEDIN_URL}
                 target="_blank"
                 rel="noreferrer"
               >
                 <FontAwesomeIcon icon={faLinkedin} />
               </Nav.Link>
               <Nav.Link
-                href="https://github.com/Writ3r"
+                href={GITHUB_URL}
                 className="top-nav-link border border-light rounded"
                 target="_blank"
                 rel="noreferrer"

@@ -1,6 +1,7 @@
 import { Carousel, CarouselItem, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import { GITHUB_URL } from "~/components/ui/constants";
 import video from "./Letter.webm";
 
 const VideoBackground = (props: { videoUrl: string }) => {
@@ -32,7 +33,7 @@ function PortfolioCarouselItem(props: {
           </p>
           <Button
             variant="outline-light"
-            href="https://github.com/Writ3r/portfolio"
+            href={GITHUB_URL}
             target="_blank"
             rel="noreferrer"
           >

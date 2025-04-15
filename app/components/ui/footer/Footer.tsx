@@ -2,6 +2,13 @@ import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import {
+  GITHUB_URL,
+  LINKEDIN_URL,
+  WEBSITE_URL,
+  COVER_LETTER_URL,
+  RESUME_URL,
+} from "~/components/ui/constants";
 
 export function Footer() {
   return (
@@ -9,7 +16,7 @@ export function Footer() {
       <div className="pt-4">
         <Button
           variant="outline-light"
-          href="https://docs.google.com/document/d/1XRYsCeIkxK-lsZblag1_hA39kfoHJFjL-Tlo2_ZkGwE/edit?usp=sharing"
+          href={RESUME_URL}
           target="_blank"
           rel="noreferrer"
         >
@@ -21,7 +28,7 @@ export function Footer() {
         </Button>
         <Button
           variant="outline-light"
-          href="https://docs.google.com/document/d/1ca1rWlQpQJGOK2GYhp-mz5E8NWMic65b9PZSQFZu1Ss/edit?usp=sharing"
+          href={COVER_LETTER_URL}
           target="_blank"
           rel="noreferrer"
         >
@@ -34,14 +41,10 @@ export function Footer() {
       </div>
       <hr className="my-4" />
       <div className="pb-4">
-        <a href="https://github.com/Writ3r" target="_blank" rel="noreferrer">
+        <a href={GITHUB_URL} target="_blank" rel="noreferrer">
           <FontAwesomeIcon className="mr-3 fa-white-icon" icon={faGithub} />
         </a>
-        <a
-          href="https://www.linkedin.com/in/lucas-wing-314894104/"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={LINKEDIN_URL} target="_blank" rel="noreferrer">
           <FontAwesomeIcon className="mr-3 fa-white-icon" icon={faLinkedin} />
         </a>
       </div>
@@ -49,7 +52,7 @@ export function Footer() {
         <span>
           © {new Date().getFullYear()} Copyright:
           <a
-            href="https://lucaswing.com"
+            href={WEBSITE_URL}
             target="_blank"
             rel="noreferrer"
             className="ml-1"
