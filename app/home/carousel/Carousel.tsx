@@ -1,8 +1,6 @@
 import { Carousel, CarouselItem, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
-import { type PropsWithChildren, type ComponentProps } from "react";
-
 import video from "./Letter.webm";
 
 const VideoBackground = (props: { videoUrl: string }) => {
