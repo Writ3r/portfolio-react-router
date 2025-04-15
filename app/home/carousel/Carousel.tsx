@@ -1,50 +1,29 @@
-import { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
-import { Nav } from "react-bootstrap";
-import {
-  Navbar,
-  Carousel,
-  CarouselItem,
-  Button,
-  CarouselCaption,
-} from "react-bootstrap";
+import { Carousel, CarouselItem, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 
 import video from "./Letter.webm";
 
-interface VideoInput {
-  videoUrl: string;
-}
-
-const VideoBackground = (props: VideoInput) => {
+const VideoBackground = (props: { videoUrl: string }) => {
   return (
-    <video
-      className="video-intro"
-      autoPlay
-      loop
-      muted
-      style={{ maxWidth: "none" }}
-    >
+    <video className="video-intro" autoPlay loop muted>
       <source src={props.videoUrl} type="video/mp4" />
     </video>
   );
 };
 
-interface CarouselCenterInnerInput {
+const CarouselCenterInner = (props: {
   saying: string;
   code: string;
   explination: string;
-}
-
-const CarouselCenterInner = (props: CarouselCenterInnerInput) => {
+}) => {
   return (
-    <div className="mask rgba-black-light d-flex justify-content-center align-items-center">
-      <div className="text-center white-text mx-5" style={{ color: "white" }}>
+    <div className="mask d-flex justify-content-center align-items-center">
+      <div className="text-center white-text mx-5">
         <h1 className="mb-4">
           <strong>{props.saying}</strong>
         </h1>
-        <p className="animated pulse infinite">
+        <p className="animate__animated animate__pulse animate__infinite">
           <strong>{props.code}</strong>
         </p>
         <p className="mb-4 d-none d-md-block">
@@ -60,7 +39,6 @@ const CarouselCenterInner = (props: CarouselCenterInnerInput) => {
           <FontAwesomeIcon
             className="ml-2 animate__animated animate__tada animate__infinite"
             icon={faGraduationCap}
-            style={{ color: "white" }}
           />
         </Button>
       </div>
