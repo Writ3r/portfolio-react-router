@@ -42,7 +42,7 @@ function SkillArea(props: SkillInput) {
 
 export function Skills() {
   return (
-    <section id="skills" className="pageAnchor">
+    <section id="skills">
       <h2 className="my-5 h3 text-center">Skills</h2>
       <Row className="features-small mb-5 mt-3">
         <Col md="4">

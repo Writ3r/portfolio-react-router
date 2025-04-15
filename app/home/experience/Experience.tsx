@@ -52,7 +52,7 @@ export function Experience() {
   const [key, setKey] = useState("eng1");
 
   return (
-    <section id="experience" className="pageAnchor">
+    <section id="experience">
       <h2 className="my-5 h3 text-center">Experience</h2>
       <div className="row">
         <div className="col-lg-12 col-md-12 px-4">

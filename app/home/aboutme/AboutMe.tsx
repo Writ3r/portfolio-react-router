@@ -39,7 +39,7 @@ const Skill = (props: SkillInput) => {
 
 export function AboutMe() {
   return (
-    <section id="about" className="pageAnchor">
+    <section id="about">
       <h3 className="h3 text-center mb-5">About Me</h3>
       <Row className="row wow fadeIn">
         <Col lg="6" md="12" className="px-4">

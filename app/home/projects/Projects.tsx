@@ -152,7 +152,7 @@ export function Projects() {
   // react-bootstrap's active key appears broken with SSR, so need to manage it myself..
   const [key, setKey] = useState("dc");
   return (
-    <section id="projects" className="pageAnchor">
+    <section id="projects">
       <h2 className="my-5 h3 text-center">Projects</h2>
       <TabContainer id="left-tabs-example" defaultActiveKey="first">
         <Row>

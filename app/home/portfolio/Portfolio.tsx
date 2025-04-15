@@ -33,7 +33,7 @@ export function Portfolio() {
   }, []);
 
   return (
-    <section id="portfolio" className="mt-5 pageAnchor">
+    <section id="portfolio">
       <Row>
         <Col md="6" className="mb-4">
           <img src={pic} className="img-fluid z-depth-1-half" alt="" />

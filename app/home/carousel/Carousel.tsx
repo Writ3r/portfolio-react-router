@@ -70,7 +70,7 @@ const CarouselCenterInner = (props: CarouselCenterInnerInput) => {
 
 export function PortfolioCarousel() {
   return (
-    <section id="home" className="pageAnchor">
+    <section id="home" className="mb-5">
       <Carousel className="carouselPage">
         <CarouselItem>
           <div className="view">
