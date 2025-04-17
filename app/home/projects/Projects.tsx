@@ -13,21 +13,16 @@ import {
   ModalFooter,
   ModalHeader,
   ModalTitle,
-  ModalDialog,
   Button,
   Carousel,
   CarouselItem,
 } from "react-bootstrap";
 import {
-  faSolarPanel,
-  faLaptopCode,
   faEnvelope,
-  faPeopleCarry,
   faChartPie,
   faVolleyballBall,
   faTrophy,
   faTShirt,
-  faUsers,
   faLink,
   faFolderOpen,
 } from "@fortawesome/free-solid-svg-icons";
@@ -48,6 +43,9 @@ import ksspeSeq from "./ksspe/KSSPECompletedSeqDiagrams.pdf";
 import ksspeState from "./ksspe/State.jpg";
 import clothesSeq from "./clothescloset/Team6-Sequence.pdf";
 import clothesState from "./clothescloset/stateDiagram.jpg";
+import mailawaySwagger from "./mailaway/swagger-endpoints.png";
+import mailawayCreateAcc from "./mailaway/create-account.png";
+import mailawayPortainer from "./mailaway/portainer.png";
 
 type Technology = {
   name: string;
@@ -169,11 +167,11 @@ export function Projects() {
                   eventKey="dc"
                 >
                   <FontAwesomeIcon
-                    icon={faSolarPanel}
+                    icon={faEnvelope}
                     color="#2196f3"
                     className="animate__animated animate__jello animate__infinite mr-2"
                   />
-                  Digital Command
+                  Mailaway
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -259,7 +257,7 @@ export function Projects() {
                   conclusion="The primary purpose of this project is to learn how spring-boot works.
                           I doubt this'll ever kick off enough to actually be profitable, and that's alright.
                           If I can get real-world experience with spring-boot, I'm happy with the outcome."
-                  pics={[]}
+                  pics={[mailawaySwagger, mailawayCreateAcc, mailawayPortainer]}
                 ></Project>
               </TabPane>
               <TabPane active={key === "mp"} eventKey="mp">
@@ -470,7 +468,8 @@ export function Projects() {
                 </Project>
               </TabPane>
               <TabPane active={key === "hm"} eventKey="hm">
-                Second tab content
+                I'll fill this out later...
+                There's a lot of projects I've worked that warrent a mention but not a full section.
               </TabPane>
             </TabContent>
           </Col>
