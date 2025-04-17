@@ -21,7 +21,7 @@ function yearsDiff(d1: Date, d2: Date) {
   return yearsDiff;
 }
 
-export function Portfolio() {
+export function MyPortfolio() {
   const [secondsCoding, setSecondsCoding] = useState<number>(0);
   const currTime = new Date();
 
@@ -39,8 +39,11 @@ export function Portfolio() {
         <Col md="6" className="mb-4">
           <img
             src={pic}
-            className="img-fluid z-depth-1-half"
             alt="engineer programming on a laptop"
+            style={{
+              boxShadow:
+                "rgba(0, 0, 0, 0.18) 0px 5px 11px 0px, rgba(0, 0, 0, 0.15) 0px 4px 15px 0px",
+            }}
           />
         </Col>
         <Col md="6" className="mb-4">
@@ -80,9 +83,8 @@ export function Portfolio() {
           >
             RESUME DOC
             <FontAwesomeIcon
-              className="ml-2 animate__animated animate__swing animate__infinite"
+              className="ml-2 animate__animated animate__swing animate__infinite fa-white-icon"
               icon={faDownload}
-              style={{ color: "white" }}
             />
           </Button>
           <Button
@@ -94,9 +96,8 @@ export function Portfolio() {
           >
             COVER LETTER
             <FontAwesomeIcon
-              className="ml-2 animate__animated animate__swing animate__infinite"
+              className="ml-2 animate__animated animate__swing animate__infinite fa-white-icon"
               icon={faDownload}
-              style={{ color: "white" }}
             />
           </Button>
         </Col>

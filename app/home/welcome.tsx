@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap";
 import { NavBar } from "~/components/ui/topnav/NavBar";
 import { Footer } from "~/components/ui/footer/Footer";
 import { PortfolioCarousel } from "~/home/carousel/Carousel";
-import { Portfolio } from "~/home/portfolio/Portfolio";
+import { MyPortfolio } from "~/home/my_portfolio/MyPortfolio";
 import { AboutMe } from "~/home/aboutme/AboutMe";
 import { Experience } from "~/home/experience/Experience";
 import { Skills } from "~/home/skills/Skills";
@@ -17,7 +17,7 @@ export function Welcome({ message }: { message: string }) {
         <PortfolioCarousel />
         <main className="flex-grow-1">
           <Container>
-            <Portfolio />
+            <MyPortfolio />
             <hr className="my-5"/>
             <AboutMe />
             <hr className="my-5"/>

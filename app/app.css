@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-html,
-body {
-  font-family: "Roboto", sans-serif;
-}
-
 .carousel,
 .carousel .carousel-inner,
 .carousel .carousel-inner .active,
@@ -34,11 +29,6 @@ html {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   padding: .84rem 2.14rem;
   font-size: .81rem;
-}
-
-.btn-grey {
-  color: #fff;
-  background-color: #616161!important;
 }
 
 strong {
@@ -106,10 +96,6 @@ body, h1, h2, h3, h4, h5, h6 {
   margin-top: 20px;
 }
 
-.grey-text {
-  color: #828282!important;
-}
-
 .nav-tabs .nav-link {
   color: #000000!important;
 }
@@ -127,6 +113,12 @@ body, h1, h2, h3, h4, h5, h6 {
 
 /* ========== GENERAL ========== */
 
+/* set general page font */
+html,
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 /* fixes cursor to be the hand pointer for project modal opens */
 .custom-link:hover { cursor:pointer }
 
@@ -138,11 +130,33 @@ body, h1, h2, h3, h4, h5, h6 {
   color: "white"
 }
 
+.fa-purple-icon {
+  color: #3f51b5;
+}
+
+.fa-blue-icon {
+  color: #2196f3;
+}
+
+.fa-teal-icon {
+  color: #00bcd4;
+}
+
 /* for all text to be the same white */
 .white-text {
   color: #fff!important;
 }
 
+/* generic grey button styling */
+.btn-grey {
+  color: #fff;
+  background-color: #616161!important;
+}
+
+/* a slightly lighter shade of text used for more information */
+.grey-text {
+  color: #636363!important;
+}
 
 /* ========== CAROUSEL SPECIFIC ========== */
 

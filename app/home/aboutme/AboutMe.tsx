@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import {
   faCode,
   faCodeBranch,
@@ -22,7 +21,9 @@ type SkillInput = {
 const Skill = (props: SkillInput) => {
   const updatedFAProps = {
     ...props.fontAwesomeIconProps,
-    className: "animate__animated animate__pulse animate__infinite",
+    className:
+      props.fontAwesomeIconProps.className +
+      " animate__animated animate__pulse animate__infinite",
   };
   return (
     <Row className="row about-me-item">
@@ -30,7 +31,7 @@ const Skill = (props: SkillInput) => {
         <FontAwesomeIcon {...updatedFAProps} />
       </Col>
       <Col xs={10}>
-        <h5 className="feature-title">{props.name}</h5>
+        <h5>{props.name}</h5>
         <p className="grey-text">{props.desc}</p>
       </Col>
     </Row>
@@ -41,12 +42,16 @@ export function AboutMe() {
   return (
     <section id="about">
       <h3 className="h3 text-center mb-5">About Me</h3>
-      <Row className="row wow fadeIn">
+      <Row className="row">
         <Col lg="6" md="12" className="px-4">
           <Skill
             name="Engineer"
             desc="Engineering new and interesting projects is my jam. It's satisfying turning an idea into a design."
-            fontAwesomeIconProps={{ icon: faCode, size: "2x", color: "#3f51b5" }}
+            fontAwesomeIconProps={{
+              icon: faCode,
+              size: "2x",
+              className: "fa-purple-icon",
+            }}
           />
           <Skill
             name="Developer"
@@ -54,7 +59,7 @@ export function AboutMe() {
             fontAwesomeIconProps={{
               icon: faCodeBranch,
               size: "2x",
-              color: "#2196f3",
+              className: "fa-blue-icon",
             }}
           />
           <Skill
@@ -63,7 +68,7 @@ export function AboutMe() {
             fontAwesomeIconProps={{
               icon: faGraduationCap,
               size: "2x",
-              color: "#00bcd4",
+              className: "fa-teal-icon",
             }}
           />
         </Col>
@@ -74,13 +79,17 @@ export function AboutMe() {
             fontAwesomeIconProps={{
               icon: faGamepad,
               size: "2x",
-              color: "#3f51b5",
+              className: "fa-purple-icon",
             }}
           />
           <Skill
             name="Hiker"
             desc="Mountains, valleys, deserts, fields. Hiking is my preferred method to experience it all."
-            fontAwesomeIconProps={{ icon: faHiking, size: "2x", color: "#2196f3" }}
+            fontAwesomeIconProps={{
+              icon: faHiking,
+              size: "2x",
+              className: "fa-blue-icon",
+            }}
           />
           <Skill
             name="Walker"
@@ -88,7 +97,7 @@ export function AboutMe() {
             fontAwesomeIconProps={{
               icon: faWalking,
               size: "2x",
-              color: "#00bcd4",
+              className: "fa-teal-icon",
             }}
           />
         </Col>
