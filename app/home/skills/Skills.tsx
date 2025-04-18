@@ -45,7 +45,7 @@ export function Skills() {
           <SkillArea
             name="Java"
             desc={{
-              line1: "4 years of experience",
+              line1: "6 years of experience",
               line2: "OSGI & Spring Boot frameworks",
               line3: "Service-oriented design",
             }}
@@ -53,7 +53,7 @@ export function Skills() {
           <SkillArea
             name="Databases"
             desc={{
-              line1: "4 years of experience",
+              line1: "6 years of experience",
               line2: "MySQL, PostgreSQL, MongoDB, Solr",
               line3: "SQL and NoSQL design",
             }}
@@ -61,7 +61,7 @@ export function Skills() {
           <SkillArea
             name="JavaScript"
             desc={{
-              line1: "3 years of experience",
+              line1: "5 years of experience",
               line2: "React, Bootstrap, jQuery",
               line3: "Component-oriented design",
             }}
@@ -69,7 +69,7 @@ export function Skills() {
           <SkillArea
             name="Python"
             desc={{
-              line1: "2 years of experience",
+              line1: "4 years of experience",
               line2: "Flask, Dash, Tensorflow",
               line3: "Automation, Neural networks",
             }}
@@ -86,15 +86,15 @@ export function Skills() {
           <SkillArea
             name="Version Control"
             desc={{
-              line1: "2 years of experience",
-              line2: "Git",
-              line3: "Tourtoise, Github Desktop",
+              line1: "6 years of experience",
+              line2: "Git Versioning",
+              line3: "Tourtoise Git, Github Desktop",
             }}
           />
           <SkillArea
             name="Building"
             desc={{
-              line1: "2 years of experience",
+              line1: "6 years of experience",
               line2: "Ant, Maven, Docker",
               line3: "Traditional, and Cloud-oriented",
             }}
@@ -102,15 +102,15 @@ export function Skills() {
           <SkillArea
             name="DevOps Tools"
             desc={{
-              line1: "2 years of experience",
+              line1: "6 years of experience",
               line2: "Atlassian & Azure stacks",
-              line3: "Issue estimation, PRs, Branch creation",
+              line3: "Stories, Bugs, PRs, etc",
             }}
           />
           <SkillArea
             name="Cloud"
             desc={{
-              line1: "1 year of experience",
+              line1: "3 year of experience",
               line2: "Docker, Kubernetes, AWS",
               line3: "Microservice-oriented design",
             }}
