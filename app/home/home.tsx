@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
-import { NavBar } from "~/components/ui/topnav/NavBar";
-import { Footer } from "~/components/ui/footer/Footer";
+import { NavBar } from "~/components/ui/NavBar";
+import { Footer } from "~/components/ui/Footer";
 import { PortfolioCarousel } from "~/home/carousel/Carousel";
 import { MyPortfolio } from "~/home/my_portfolio/MyPortfolio";
 import { AboutMe } from "~/home/aboutme/AboutMe";
