@@ -91,11 +91,6 @@ body, h1, h2, h3, h4, h5, h6 {
   margin-top: 40px;
 }
 
-/* arbitrary margin for title headers */
-.title-margin {
-  margin-top: 20px;
-}
-
 .nav-tabs .nav-link {
   color: #000000!important;
 }
@@ -125,7 +120,8 @@ body {
 /* fun button shake */
 .btn:hover {animation: swing 1s linear .3s infinite;}
 
-/* for all fa icons to be the same white */
+/* FA icon shared colors below */
+
 .fa-white-icon {
   color: "white"
 }
