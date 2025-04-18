@@ -15,27 +15,27 @@ function SectionSeparator() {
 function PageContent() {
   return (
     <>
-    <PortfolioCarousel />
-    <Container>
-      <MyPortfolio />
-      <SectionSeparator />
-      <AboutMe />
-      <SectionSeparator />
-      <Experience />
-      <SectionSeparator />
-      <Skills />
-      <SectionSeparator />
-      <Projects />
-    </Container>
+      <PortfolioCarousel />
+      <Container>
+        <MyPortfolio />
+        <SectionSeparator />
+        <AboutMe />
+        <SectionSeparator />
+        <Experience />
+        <SectionSeparator />
+        <Skills />
+        <SectionSeparator />
+        <Projects />
+      </Container>
     </>
   );
 }
 
-export function Welcome({ message }: { message: string }) {
+export function HomePage() {
   return (
     <>
-      {/* makes the footer stuck down to page bottom when coupled with main's flex grow */}
       <NavBar />
+      {/* makes the footer stuck down to page bottom when coupled with main's flex grow */}
       <div className="d-flex flex-column min-vh-100">
         <main className="flex-grow-1">
           <PageContent />
