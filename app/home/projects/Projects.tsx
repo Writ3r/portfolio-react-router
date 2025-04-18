@@ -91,6 +91,11 @@ type Technology = {
   desc: string;
 };
 
+type Picture = {
+  link: string;
+  alt: string;
+};
+
 const Project = (props: {
   info: {
     projName: string;
@@ -101,7 +106,7 @@ const Project = (props: {
   tech: Technology[];
   children?: React.ReactNode;
   conclusion: string;
-  pics: string[];
+  pics: Picture[];
 }) => {
   const [showModal, setShowModal] = useState(false);
   return (
@@ -150,8 +155,8 @@ const Project = (props: {
               <img
                 className="d-block w-100"
                 style={{ height: "570px" }}
-                src={pic}
-                alt="..."
+                src={pic.link}
+                alt={pic.alt}
               />
             </CarouselItem>
           );
@@ -272,7 +277,7 @@ export function Projects() {
                   conclusion="The primary purpose of this project is to learn how spring-boot works.
                           I doubt this'll ever kick off enough to actually be profitable, and that's alright.
                           If I can get real-world experience with spring-boot, I'm happy with the outcome."
-                  pics={[mailawaySwagger, mailawayCreateAcc, mailawayPortainer]}
+                  pics={MAILAWAY_PICS}
                 ></Project>
               </TabPane>
               <TabPane active={key === "mp"} eventKey="mp">
@@ -293,7 +298,7 @@ export function Projects() {
                             Was it optimal? No. Is there a lot of bugs? Probabily. But it served its purpose.
                             In the next few years at some point I'll likely come back and revamp this project.
                             The underlying idea is good, it just needs better execution and functionality."
-                  pics={[masterPlanDash, masterPlanAbout, masterPlanAssets]}
+                  pics={MASTER_PLAN_PICS}
                 >
                   <a
                     className="custom-link"
@@ -329,7 +334,7 @@ export function Projects() {
                   ]}
                   conclusion="Our small team did well at this project. It was a great learning experience for us
                           to refine our Java skills before moving into the professional world."
-                  pics={[ksspeLogin, ksspeMain]}
+                  pics={KSSPE_PICS}
                 >
                   <a
                     className="custom-link"
@@ -422,7 +427,7 @@ export function Projects() {
                   conclusion="This was a great first project to familiarize us with the inner-workings and design process
                           for client-side technologies. It was definetly rough by professional standards, but this
                           was primarily a learning experience."
-                  pics={[clothesClosetMenue, clothesClosetItem]}
+                  pics={CLOTHES_CLOSET_PICS}
                 >
                   <a
                     className="custom-link"
@@ -493,3 +498,25 @@ export function Projects() {
     </section>
   );
 }
+
+const MAILAWAY_PICS: Picture[] = [
+  { link: mailawaySwagger, alt: "swagger page of Mailaway" },
+  { link: mailawayCreateAcc, alt: "create account endpoint of Mailaway" },
+  { link: mailawayPortainer, alt: "portainer page of Mailaway" },
+];
+
+const MASTER_PLAN_PICS: Picture[] = [
+  { link: masterPlanDash, alt: "dashboard page of Mailaway" },
+  { link: masterPlanAbout, alt: "about page of Mailaway" },
+  { link: masterPlanAssets, alt: "assets page of Mailaway" },
+];
+
+const KSSPE_PICS: Picture[] = [
+  { link: ksspeLogin, alt: "ksspe program login page" },
+  { link: ksspeMain, alt: "ksspe program main page" },
+];
+
+const CLOTHES_CLOSET_PICS: Picture[] = [
+  { link: clothesClosetMenue, alt: "clothes closet program menu page" },
+  { link: clothesClosetItem, alt: "clothes closet item page" },
+];
