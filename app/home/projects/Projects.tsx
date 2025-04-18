@@ -46,6 +46,7 @@ import clothesState from "./clothescloset/stateDiagram.jpg";
 import mailawaySwagger from "./mailaway/swagger-endpoints.png";
 import mailawayCreateAcc from "./mailaway/create-account.png";
 import mailawayPortainer from "./mailaway/portainer.png";
+import { SectionTitle } from "~/components/ui/Section";
 
 type Technology = {
   name: string;
@@ -151,7 +152,7 @@ export function Projects() {
   const [key, setKey] = useState("dc");
   return (
     <section id="projects">
-      <h2 className="my-5 h3 text-center">Projects</h2>
+      <SectionTitle text="Projects" />
       <TabContainer id="left-tabs-example" defaultActiveKey="first">
         <Row>
           <Col sm={3}>

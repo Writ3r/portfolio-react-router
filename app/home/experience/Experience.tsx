@@ -10,6 +10,7 @@ import {
   FontAwesomeIcon,
   type FontAwesomeIconProps,
 } from "@fortawesome/react-fontawesome";
+import { SectionTitle } from "~/components/ui/Section";
 
 type Information = {
   startingPos: string;
@@ -53,7 +54,7 @@ export function Experience() {
 
   return (
     <section id="experience">
-      <h2 className="my-5 h3 text-center">Experience</h2>
+      <SectionTitle text="Experience" />
       <div className="row">
         <div className="col-lg-12 col-md-12 px-4">
           <Tabs

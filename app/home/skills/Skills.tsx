@@ -2,6 +2,7 @@ import { Row, Col } from "react-bootstrap";
 import pic from "./numberSmall.png";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SectionTitle } from "~/components/ui/Section";
 
 type Description = {
   line1: string;
@@ -43,7 +44,7 @@ function SkillArea(props: SkillInput) {
 export function Skills() {
   return (
     <section id="skills">
-      <h2 className="my-5 h3 text-center">Skills</h2>
+      <SectionTitle text="Skills" />
       <Row className="features-small mb-5 mt-3">
         <Col md="4">
           <SkillArea

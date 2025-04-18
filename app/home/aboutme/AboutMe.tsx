@@ -11,6 +11,7 @@ import {
   FontAwesomeIcon,
   type FontAwesomeIconProps,
 } from "@fortawesome/react-fontawesome";
+import { SectionTitle } from "~/components/ui/Section";
 
 type SkillInput = {
   name: string;
@@ -41,7 +42,7 @@ const Skill = (props: SkillInput) => {
 export function AboutMe() {
   return (
     <section id="about">
-      <h3 className="h3 text-center mb-5">About Me</h3>
+      <SectionTitle text="About Me" />
       <Row className="row">
         <Col lg="6" md="12" className="px-4">
           <Skill
