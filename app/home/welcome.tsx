@@ -8,25 +8,37 @@ import { Experience } from "~/home/experience/Experience";
 import { Skills } from "~/home/skills/Skills";
 import { Projects } from "~/home/projects/Projects";
 
+function SectionSeparator() {
+  return <hr className="my-5" />;
+}
+
+function PageContent() {
+  return (
+    <>
+    <PortfolioCarousel />
+    <Container>
+      <MyPortfolio />
+      <SectionSeparator />
+      <AboutMe />
+      <SectionSeparator />
+      <Experience />
+      <SectionSeparator />
+      <Skills />
+      <SectionSeparator />
+      <Projects />
+    </Container>
+    </>
+  );
+}
+
 export function Welcome({ message }: { message: string }) {
   return (
     <>
       {/* makes the footer stuck down to page bottom when coupled with main's flex grow */}
+      <NavBar />
       <div className="d-flex flex-column min-vh-100">
-        <NavBar />
-        <PortfolioCarousel />
         <main className="flex-grow-1">
-          <Container>
-            <MyPortfolio />
-            <hr className="my-5"/>
-            <AboutMe />
-            <hr className="my-5"/>
-            <Experience />
-            <hr className="my-5"/>
-            <Skills />
-            <hr className="my-5"/>
-            <Projects />
-          </Container>
+          <PageContent />
         </main>
         <Footer />
       </div>
