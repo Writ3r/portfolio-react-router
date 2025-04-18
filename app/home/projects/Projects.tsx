@@ -48,25 +48,13 @@ import mailawayCreateAcc from "./mailaway/create-account.png";
 import mailawayPortainer from "./mailaway/portainer.png";
 import { SectionTitle } from "~/components/ui/Section";
 
-type Technology = {
-  name: string;
-  desc: string;
-};
+function ProjectItemHeader(props: { text: string }) {
+  return <h5>{props.text}</h5>;
+}
 
-type Information = {
-  projName: string;
-  authors: string;
-  period: string;
-};
-
-type ProjectInput = {
-  info: Information;
-  overview: string;
-  tech: Technology[];
-  children?: React.ReactNode;
-  conclusion: string;
-  pics: string[];
-};
+function ProjectItemBody(props: PropsWithChildren<{}>) {
+  return <p className="grey-text">{props.children}</p>;
+}
 
 function ProjectPictureGallery(
   props: PropsWithChildren<{
@@ -77,7 +65,12 @@ function ProjectPictureGallery(
   }>
 ) {
   return (
-    <Modal show={props.show} onHide={props.handleClose} size="lg" key={props.title}>
+    <Modal
+      show={props.show}
+      onHide={props.handleClose}
+      size="lg"
+      key={props.title}
+    >
       <ModalHeader closeButton>
         <ModalTitle>{props.title}</ModalTitle>
       </ModalHeader>
@@ -93,20 +86,36 @@ function ProjectPictureGallery(
   );
 }
 
-const Project = (props: ProjectInput) => {
+type Technology = {
+  name: string;
+  desc: string;
+};
+
+const Project = (props: {
+  info: {
+    projName: string;
+    authors: string;
+    period: string;
+  };
+  overview: string;
+  tech: Technology[];
+  children?: React.ReactNode;
+  conclusion: string;
+  pics: string[];
+}) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      <h5 className="feature-title">Information</h5>
-      <p className="grey-text">
+      <ProjectItemHeader text="Information" />
+      <ProjectItemBody>
         <strong>Project Name:</strong> {props.info.projName} <br />
         <strong>Authors:</strong> {props.info.authors} <br />
         <strong>Period:</strong> {props.info.period}
-      </p>
-      <h5 className="feature-title title-margin">Overview</h5>
-      <p className="grey-text">{props.overview}</p>
-      <h5 className="feature-title title-margin">Technologies</h5>
-      <div className="grey-text">
+      </ProjectItemBody>
+      <ProjectItemHeader text="Overview" />
+      <ProjectItemBody>{props.overview}</ProjectItemBody>
+      <ProjectItemHeader text="Technologies" />
+      <ProjectItemBody>
         {props.tech.map((tech) => {
           return (
             <div key={tech.name}>
@@ -114,8 +123,8 @@ const Project = (props: ProjectInput) => {
             </div>
           );
         })}
-      </div>
-      <h5 className="feature-title title-margin">Resources</h5>
+      </ProjectItemBody>
+      <ProjectItemHeader text="Resources" />
       <p>
         {props.children}
         <a onClick={() => setShowModal(true)} className="custom-link">
@@ -127,8 +136,8 @@ const Project = (props: ProjectInput) => {
           Pictures
         </a>
       </p>
-      <h5 className="feature-title title-margin">Concluding Thoughts</h5>
-      <p className="grey-text">{props.conclusion}</p>
+      <ProjectItemHeader text="Concluding Thoughts" />
+      <ProjectItemBody>{props.conclusion}</ProjectItemBody>
       <ProjectPictureGallery
         title={props.info.projName}
         show={showModal}
@@ -138,7 +147,12 @@ const Project = (props: ProjectInput) => {
         {props.pics.map((pic, index) => {
           return (
             <CarouselItem key={index}>
-              <img className="d-block w-100" style={{height:"570px"}} src={pic} alt="..." />
+              <img
+                className="d-block w-100"
+                style={{ height: "570px" }}
+                src={pic}
+                alt="..."
+              />
             </CarouselItem>
           );
         })}
@@ -469,8 +483,8 @@ export function Projects() {
                 </Project>
               </TabPane>
               <TabPane active={key === "hm"} eventKey="hm">
-                I'll fill this out later...
-                There's a lot of projects I've worked that warrent a mention but not a full section.
+                I'll fill this out later... There's a lot of projects I've
+                worked that warrent a mention but not a full section.
               </TabPane>
             </TabContent>
           </Col>
