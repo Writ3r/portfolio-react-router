@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, type PropsWithChildren } from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import {
@@ -6,30 +6,31 @@ import {
   faPeopleCarry,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  FontAwesomeIcon,
-  type FontAwesomeIconProps,
-} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SectionTitle } from "~/components/ui/Section";
 
-type Information = {
-  startingPos: string;
-  period: string;
-  currentPosition?: string;
-};
+function ExperienceItemHeader(props: { text: string }) {
+  return <h5>{props.text}</h5>;
+}
 
-type ExpInput = {
-  info: Information;
+function ExperienceItemBody(props: PropsWithChildren<{}>) {
+  return <p className="grey-text">{props.children}</p>;
+}
+
+const ExperienceItem = (props: {
+  info: {
+    startingPos: string;
+    period: string;
+    currentPosition?: string;
+  };
   respon: string;
   awards: string;
   progress: string;
-};
-
-const ExperienceItem = (props: ExpInput) => {
+}) => {
   return (
     <div className="tab-pane-container">
-      <h5 className="feature-title title-margin">Information</h5>
-      <p className="grey-text">
+      <ExperienceItemHeader text="Information" />
+      <ExperienceItemBody>
         {props.info.currentPosition && (
           <>
             <strong>Position:</strong> {props.info.currentPosition}
@@ -38,13 +39,13 @@ const ExperienceItem = (props: ExpInput) => {
         )}
         <strong>Starting Position:</strong> {props.info.startingPos} <br />
         <strong>Period:</strong> {props.info.period}
-      </p>
-      <h5 className="feature-title title-margin">Responsibilities</h5>
-      <p className="grey-text">{props.respon}</p>
-      <h5 className="feature-title title-margin">Awards</h5>
-      <p className="grey-text">{props.awards}</p>
-      <h5 className="feature-title title-margin">Progression</h5>
-      <p className="grey-text">{props.progress}</p>
+      </ExperienceItemBody>
+      <ExperienceItemHeader text="Responsibilities" />
+      <ExperienceItemBody>{props.respon}</ExperienceItemBody>
+      <ExperienceItemHeader text="Awards" />
+      <ExperienceItemBody>{props.awards}</ExperienceItemBody>
+      <ExperienceItemHeader text="Progression" />
+      <ExperienceItemBody>{props.progress}</ExperienceItemBody>
     </div>
   );
 };
@@ -66,8 +67,12 @@ export function Experience() {
               eventKey="eng1"
               title={
                 <>
-                  <FontAwesomeIcon icon={faLaptopCode} color="#3f51b5" className="animate__animated animate__jello animate__infinite" />{" "}BAE
-                  Systems - Senior Software Engineer
+                  <FontAwesomeIcon
+                    icon={faLaptopCode}
+                    color="#3f51b5"
+                    className="animate__animated animate__jello animate__infinite"
+                  />{" "}
+                  BAE Systems - Software Engineer
                 </>
               }
             >
@@ -78,18 +83,22 @@ export function Experience() {
                   currentPosition: "Senior Software Engineer",
                 }}
                 respon="Engineering and developing GXP Xplorer's Service infastructure with occasional supporting webclient and cloud changes. 
-                      In any down time, made development support related tools to optimize efficiency during debugging and building."
-                awards="All of my performance reviews have had excellent scores thus far. In addition, achieved two Impact awards for my interest in our service infastructure, and cloud-related work during covid."
-                progress="Progressed significantly in my ability to write enterprise-grade code in both the server-side and in cloud environments.
-                      On the service-side I've learned about REST endoints, messaging systems, dependency injection, and service-oriented architecture.
-                      In the cloud, I've learned the basics of code containerization, along with management and deployment of those containers."
+                      During down time, made development support related tools to increase efficiency debugging and building our applications."
+                awards="All of my performance reviews have had excellent scores thus far. In addition, I've achieved multiple Impact awards for feature and/or contract related work."
+                progress="Progressing significantly in my ability to write enterprise-grade code in both the server-side and in cloud environments.
+                      I work with REST endoints, messaging systems, SQL & NoSQL databases, dependency injection, and service-oriented architecture.
+                      In the cloud, I actively work with Docker containers, Kubernetes, and Rancher."
               />
             </Tab>
             <Tab
               eventKey="sumhelp"
               title={
                 <>
-                  <FontAwesomeIcon icon={faPeopleCarry} color="#2196f3" className="animate__animated animate__jello animate__infinite" />{" "}
+                  <FontAwesomeIcon
+                    icon={faPeopleCarry}
+                    color="#2196f3"
+                    className="animate__animated animate__jello animate__infinite"
+                  />{" "}
                   Marcellus Schools - Summer Help
                 </>
               }
@@ -111,7 +120,11 @@ export function Experience() {
               eventKey="worker"
               title={
                 <>
-                  <FontAwesomeIcon icon={faUsers} color="#00bcd4" className="animate__animated animate__jello animate__infinite"/>{" "}
+                  <FontAwesomeIcon
+                    icon={faUsers}
+                    color="#00bcd4"
+                    className="animate__animated animate__jello animate__infinite"
+                  />{" "}
                   Beak And Skiff - Worker
                 </>
               }

@@ -86,11 +86,6 @@ body, h1, h2, h3, h4, h5, h6 {
   margin-bottom:20px;
 }
 
-/* arbitrary margin for tab pane headers */
-.tab-pane-container {
-  margin-top: 40px;
-}
-
 .nav-tabs .nav-link {
   color: #000000!important;
 }
@@ -230,6 +225,13 @@ body {
   background-color: rgba(28, 35, 49, 0.95); /* solid when scrolled */
   padding: 0.5rem 1rem; /* shrinks */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* subtle shadow */
+}
+
+/* ========== EXPERIENCE SPECIFIC ========== */
+
+/* arbitrary margin for tab pane headers */
+.tab-pane-container {
+  margin-top: 40px;
 }
 
 /* ========== FOOTER SPECIFIC ========== */
