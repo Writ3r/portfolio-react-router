@@ -76,11 +76,6 @@ body, h1, h2, h3, h4, h5, h6 {
   margin-top: 30px;
 }
 
-/* arbitrary margin for skill items */
-.skills-item {
-  margin-top: 15px;
-}
-
 /* arbitrary margin for Projects */
 .projects-pills {
   margin-bottom:20px;
@@ -232,6 +227,13 @@ body {
 /* arbitrary margin for tab pane headers */
 .tab-pane-container {
   margin-top: 40px;
+}
+
+/* ========== SKILLS SPECIFIC ========== */
+
+/* arbitrary margin for skill items */
+.skills-item {
+  margin-top: 15px;
 }
 
 /* ========== FOOTER SPECIFIC ========== */

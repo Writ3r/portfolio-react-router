@@ -4,30 +4,25 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SectionTitle } from "~/components/ui/Section";
 
-type Description = {
-  line1: string;
-  line2: string;
-  line3: string;
-};
-
-type SkillInput = {
+function SkillArea(props: {
   name: string;
-  desc: Description;
-};
-
-function SkillArea(props: SkillInput) {
+  desc: {
+    line1: string;
+    line2: string;
+    line3: string;
+  };
+}) {
   return (
     <Row>
       <Col xs={2}>
         <FontAwesomeIcon
-          className="ml-2 animate__animated animate__pulse animate__infinite"
+          className="ml-2 animate__animated animate__pulse animate__infinite fa-purple-icon"
           icon={faCheckCircle}
-          style={{ color: "#3f51b5" }}
           size="2x"
         />
       </Col>
       <Col xs={10}>
-        <h6 className="feature-title">{props.name}</h6>
+        <h6>{props.name}</h6>
         <p className="grey-text">
           {props.desc.line1}
           <br />
@@ -45,7 +40,7 @@ export function Skills() {
   return (
     <section id="skills">
       <SectionTitle text="Skills" />
-      <Row className="features-small mb-5 mt-3">
+      <Row className="mb-5 mt-3">
         <Col md="4">
           <SkillArea
             name="Java"
