@@ -13,13 +13,11 @@ import {
 } from "@fortawesome/react-fontawesome";
 import { SectionTitle } from "~/components/ui/Section";
 
-type SkillInput = {
+const Skill = (props: {
   name: string;
   desc: string;
   fontAwesomeIconProps: FontAwesomeIconProps;
-};
-
-const Skill = (props: SkillInput) => {
+}) => {
   const updatedFAProps = {
     ...props.fontAwesomeIconProps,
     className:
@@ -76,7 +74,7 @@ export function AboutMe() {
         <Col lg="6" md="12">
           <Skill
             name="Gamer"
-            desc="Destiny, League of Legends, Minecraft, etc. Have played, and love them all."
+            desc="Destiny, League of Legends, Minecraft, OSRS, etc. I've played numerous games and love them all."
             fontAwesomeIconProps={{
               icon: faGamepad,
               size: "2x",

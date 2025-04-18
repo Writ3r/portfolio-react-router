@@ -82,12 +82,12 @@ export function Experience() {
                   period: "June 2019 - PRESENT",
                   currentPosition: "Senior Software Engineer",
                 }}
-                respon="Engineering and developing GXP Xplorer's Service infastructure with occasional supporting webclient and cloud changes. 
-                      During down time, made development support related tools to increase efficiency debugging and building our applications."
-                awards="All of my performance reviews have had excellent scores thus far. In addition, I've achieved multiple Impact awards for feature and/or contract related work."
-                progress="Progressing significantly in my ability to write enterprise-grade code in both the server-side and in cloud environments.
-                      I work with REST endoints, messaging systems, SQL & NoSQL databases, dependency injection, and service-oriented architecture.
-                      In the cloud, I actively work with Docker containers, Kubernetes, and Rancher."
+                respon="Designing and developing GXP Platform's Service infastructure locally and in the cloud with occasional webclient changes. 
+                      During innovation sprints, created dev support related tools to increase efficiency debugging and building our applications."
+                awards="All of my performance reviews have had excellent scores. In addition, I've achieved multiple Impact awards for feature and/or contract related work."
+                progress="Progressing my ability to write enterprise-grade code in both the server-side and in cloud environments.
+                      We actively work with REST endoints, messaging systems, SQL & NoSQL databases, dependency injection, and service-oriented architecture.
+                      In the cloud we work with Docker containers, Kubernetes, and Rancher."
               />
             </Tab>
             <Tab
