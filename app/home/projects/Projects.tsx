@@ -205,13 +205,12 @@ function ProjectTabLink(props: PropsWithChildren<{ link: string }>) {
 }
 
 export function Projects() {
-  // react-bootstrap's active key appears broken with SSR, so need to manage it myself..
   const DIGITAL_CMD_KEY = "dc";
   const MASTER_PLAN_KEY = "mp";
-  const KSSPE_KEY = "km"
+  const KSSPE_KEY = "km";
   const CLOTHES_CLOSET_KEY = "cc";
   const HONORABLE_MENTIONS_KEY = "hm";
-
+  // react-bootstrap's active key appears broken with SSR, so need to manage it myself..
   const [key, setKey] = useState(DIGITAL_CMD_KEY);
   return (
     <section id="projects">
@@ -224,7 +223,11 @@ export function Projects() {
               className="flex-column lucas-pills projects-pills"
               defaultActiveKey={DIGITAL_CMD_KEY}
             >
-              <ProjectTabItem activeKey={key} navKey={DIGITAL_CMD_KEY} setKey={setKey}>
+              <ProjectTabItem
+                activeKey={key}
+                navKey={DIGITAL_CMD_KEY}
+                setKey={setKey}
+              >
                 <FontAwesomeIcon
                   icon={faEnvelope}
                   color="#2196f3"
@@ -232,7 +235,11 @@ export function Projects() {
                 />
                 Mailaway
               </ProjectTabItem>
-              <ProjectTabItem activeKey={key} navKey={MASTER_PLAN_KEY} setKey={setKey}>
+              <ProjectTabItem
+                activeKey={key}
+                navKey={MASTER_PLAN_KEY}
+                setKey={setKey}
+              >
                 <FontAwesomeIcon
                   icon={faChartPie}
                   color="#00bcd4"
@@ -240,7 +247,11 @@ export function Projects() {
                 />
                 Master Plan
               </ProjectTabItem>
-              <ProjectTabItem activeKey={key} navKey={KSSPE_KEY} setKey={setKey}>
+              <ProjectTabItem
+                activeKey={key}
+                navKey={KSSPE_KEY}
+                setKey={setKey}
+              >
                 <FontAwesomeIcon
                   icon={faVolleyballBall}
                   color="black"
@@ -248,7 +259,11 @@ export function Projects() {
                 />
                 KSSPE Management
               </ProjectTabItem>
-              <ProjectTabItem activeKey={key} navKey={CLOTHES_CLOSET_KEY} setKey={setKey}>
+              <ProjectTabItem
+                activeKey={key}
+                navKey={CLOTHES_CLOSET_KEY}
+                setKey={setKey}
+              >
                 <FontAwesomeIcon
                   icon={faTShirt}
                   color="#3f51b5!"
@@ -256,7 +271,11 @@ export function Projects() {
                 />
                 Clothes Closet
               </ProjectTabItem>
-              <ProjectTabItem activeKey={key} navKey={HONORABLE_MENTIONS_KEY} setKey={setKey}>
+              <ProjectTabItem
+                activeKey={key}
+                navKey={HONORABLE_MENTIONS_KEY}
+                setKey={setKey}
+              >
                 <FontAwesomeIcon
                   icon={faTrophy}
                   color="#ebdc13"
@@ -268,7 +287,10 @@ export function Projects() {
           </Col>
           <Col sm={9}>
             <TabContent>
-              <TabPane active={key === DIGITAL_CMD_KEY} eventKey={DIGITAL_CMD_KEY}>
+              <TabPane
+                active={key === DIGITAL_CMD_KEY}
+                eventKey={DIGITAL_CMD_KEY}
+              >
                 <Project
                   info={{
                     projName: "Mailaway",
@@ -294,7 +316,10 @@ export function Projects() {
                   pics={MAILAWAY_PICS}
                 ></Project>
               </TabPane>
-              <TabPane active={key === MASTER_PLAN_KEY} eventKey={MASTER_PLAN_KEY}>
+              <TabPane
+                active={key === MASTER_PLAN_KEY}
+                eventKey={MASTER_PLAN_KEY}
+              >
                 <Project
                   info={{
                     projName: "Master Plan",
@@ -360,7 +385,10 @@ export function Projects() {
                   </ProjectTabLink>
                 </Project>
               </TabPane>
-              <TabPane active={key === CLOTHES_CLOSET_KEY} eventKey={CLOTHES_CLOSET_KEY}>
+              <TabPane
+                active={key === CLOTHES_CLOSET_KEY}
+                eventKey={CLOTHES_CLOSET_KEY}
+              >
                 <Project
                   info={{
                     projName: "Brockport Professional Clothes Closet",
@@ -401,7 +429,10 @@ export function Projects() {
                   </ProjectTabLink>
                 </Project>
               </TabPane>
-              <TabPane active={key === HONORABLE_MENTIONS_KEY} eventKey={HONORABLE_MENTIONS_KEY}>
+              <TabPane
+                active={key === HONORABLE_MENTIONS_KEY}
+                eventKey={HONORABLE_MENTIONS_KEY}
+              >
                 I'll fill this out later... There's a lot of projects I've
                 worked that warrent a mention but not a full section.
               </TabPane>
