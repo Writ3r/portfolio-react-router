@@ -62,15 +62,6 @@ body, h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
-.font-small {
-  font-size: .9rem;
-}
-
-/* arbitrary margin for about me items */
-.about-me-item {
-  margin-top: 30px;
-}
-
 /* ========== GENERAL ========== */
 
 /* set general page font */
@@ -122,6 +113,10 @@ body {
 /* a slightly lighter shade of text used for more information */
 .grey-text {
   color: #636363!important;
+}
+
+.font-small {
+  font-size: .9rem;
 }
 
 /* ========== CAROUSEL SPECIFIC ========== */
@@ -200,6 +195,13 @@ body {
   background-color: rgba(28, 35, 49, 0.95); /* solid when scrolled */
   padding: 0.5rem 1rem; /* shrinks */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* subtle shadow */
+}
+
+/* ========== ABOUT ME SPECIFIC ========== */
+
+/* arbitrary margin for about me items */
+.about-me-item {
+  margin-top: 30px;
 }
 
 /* ========== EXPERIENCE SPECIFIC ========== */
