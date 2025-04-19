@@ -75,7 +75,7 @@ function ProjectPictureGallery(
         <Carousel indicators={false}>{props.children}</Carousel>
       </ModalBody>
       <ModalFooter>
-        <Button variant="secondary" onClick={props.handleClose}>
+        <Button className="btn-grey" onClick={props.handleClose}>
           Close
         </Button>
       </ModalFooter>
