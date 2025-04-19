@@ -1,4 +1,5 @@
-export const GITHUB_URL = "https://github.com/Writ3r/portfolio";
+export const GITHUB_PORTFOLIO_URL = "https://github.com/Writ3r/portfolio";
+export const GITHUB_URL = "https://github.com/Writ3r";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/lucas-wing-314894104/";
 export const WEBSITE_URL = "https://lucaswing.com";
 export const COVER_LETTER_URL =

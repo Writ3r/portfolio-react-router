@@ -31,6 +31,7 @@ import {
   faDesktop,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { GITHUB_PORTFOLIO_URL, WEBSITE_URL } from "~/components/ui/constants";
 
 import clothesClosetItem from "./clothescloset/ClothesClosetItem.png";
 import clothesClosetMenue from "./clothescloset/ClothesClosetMainMenue.png";
@@ -133,7 +134,7 @@ const Project = (props: {
       <ProjectItemHeader text="Resources" />
       <p>
         {props.children}
-        {props.pics.length > 0 ? (
+        {props.pics.length > 0 && (
           <a onClick={() => setShowModal(true)} className="custom-link">
             <FontAwesomeIcon
               icon={faFolderOpen}
@@ -142,9 +143,10 @@ const Project = (props: {
             />
             Pictures
           </a>
-        ) : (
+        )}
+        {!props.children && props.pics.length === 0 && (
           <p>
-            <i>No provided pictures at this time...</i>
+            <i>No provided resources at this time...</i>
           </p>
         )}
       </p>
@@ -339,10 +341,7 @@ export function Projects() {
           </Col>
           <Col sm={9}>
             <TabContent>
-            <TabPane
-                active={key === PORTFOLIO_KEY}
-                eventKey={PORTFOLIO_KEY}
-              >
+              <TabPane active={key === PORTFOLIO_KEY} eventKey={PORTFOLIO_KEY}>
                 <Project
                   info={{
                     projName: "Portfolio Website",
@@ -358,12 +357,20 @@ export function Projects() {
                       name: "Frameworks",
                       desc: "React-Router [Remix], Typescript, Bootstrap",
                     },
-                    { name: "Deployment", desc: "Cloudflare Workers [serverless]" },
+                    {
+                      name: "Deployment",
+                      desc: "Cloudflare Workers [serverless]",
+                    },
                   ]}
                   conclusion="Deployment on the web is continually evolving and keeping up with it can be difficult. 
                   Maintaining this website has shown me how much web app code has progressed in such a short time."
                   pics={[]}
-                ></Project>
+                >
+                  <ProjectTabLink link={WEBSITE_URL}>Website</ProjectTabLink>
+                  <ProjectTabLink link={GITHUB_PORTFOLIO_URL}>
+                    Source Code
+                  </ProjectTabLink>
+                </Project>
               </TabPane>
               <TabPane
                 active={key === DIGITAL_CMD_KEY}
