@@ -17,27 +17,21 @@ body, h1, h2, h3, h4, h5, h6 {
 .btn:hover {animation: swing 1s linear .3s infinite;}
 
 /* FA icon shared colors below */
-
 .fa-white-icon {
   color: "white"
 }
-
 .fa-purple-icon {
   color: #3f51b5;
 }
-
 .fa-blue-icon {
   color: #2196f3;
 }
-
 .fa-teal-icon {
   color: #00bcd4;
 }
-
 .fa-black-icon {
   color: "black"
 }
-
 .fa-gold-icon {
   color: #ebdc13;
 }
@@ -123,19 +117,16 @@ strong {
   overflow: hidden;
   background-attachment: fixed;
 }
-
 .view img, .view video {
   position: relative;
   display: block;
 }
-
 .view {
   position: relative;
   overflow: hidden;
   cursor: default;
   height: 100%;
 }
-
 .view video.video-intro {
   top: 50%;
   left: 50%;
