@@ -58,11 +58,6 @@ footer.page-footer a {
   color: #fff;
 }
 
-a, a:hover {
-  text-decoration: none;
-  transition: all .2s ease-in-out;
-}
-
 body, h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
@@ -74,10 +69,6 @@ body, h1, h2, h3, h4, h5, h6 {
 /* arbitrary margin for about me items */
 .about-me-item {
   margin-top: 30px;
-}
-
-.nav-tabs .nav-link {
-  color: #000000!important;
 }
 
 /* ========== GENERAL ========== */
@@ -218,6 +209,10 @@ body {
   margin-top: 40px;
 }
 
+.experience-tab .nav-link {
+  color: #000000!important;
+}
+
 /* ========== SKILLS SPECIFIC ========== */
 
 /* arbitrary margin for skill items */
@@ -228,7 +223,13 @@ body {
 /* ========== PROJECTS SPECIFIC ========== */
 
 /* fixes cursor to be the hand pointer for project modal opens */
-.custom-link:hover { cursor:pointer }
+.custom-link:hover { 
+  cursor:pointer; 
+}
+
+.custom-link, .custom-link:hover {
+  text-decoration: none;
+}
 
 .projects-pills.nav-pills .nav-link {
   color: rgba(0,0,0,.9);

@@ -61,7 +61,7 @@ export function Experience() {
           <Tabs
             activeKey={key}
             onSelect={(k) => setKey(k || "eng1")}
-            className="nav-justified"
+            className="nav-justified experience-tab"
           >
             <Tab
               eventKey="eng1"
