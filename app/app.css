@@ -9,27 +9,6 @@ body,
 html {
     height: 100%;
 }
-@media (max-width: 992px) {
-  .navbar .nav-link {
-      padding-right: 6px;
-      padding-left: 6px;
-  }
-}
-
-.btn {
-  margin: .375rem;
-  color: inherit;
-  text-transform: uppercase;
-  word-wrap: break-word;
-  white-space: normal;
-  cursor: pointer;
-  border: 0;
-  border-radius: .125rem;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  padding: .84rem 2.14rem;
-  font-size: .81rem;
-}
 
 /* ========== GENERAL ========== */
 
@@ -80,7 +59,7 @@ body, h1, h2, h3, h4, h5, h6 {
 
 /* generic grey button styling */
 .btn-grey {
-  color: #fff;
+  color: #fff!important;
   background-color: #616161!important;
 }
 
@@ -111,6 +90,22 @@ body, h1, h2, h3, h4, h5, h6 {
 /* make strong text look stronger! */
 strong {
   font-weight: 500;
+}
+
+/* standardize the look of buttons to be more modern */
+.btn {
+  margin: .375rem;
+  color: inherit;
+  text-transform: uppercase;
+  word-wrap: break-word;
+  white-space: normal;
+  cursor: pointer;
+  border: 0;
+  border-radius: .125rem;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  padding: .84rem 2.14rem;
+  font-size: .81rem;
 }
 
 /* ========== CAROUSEL SPECIFIC ========== */
@@ -189,6 +184,14 @@ strong {
   background-color: rgba(28, 35, 49, 0.95); /* solid when scrolled */
   padding: 0.5rem 1rem; /* shrinks */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* subtle shadow */
+}
+
+/* top nav dropdown links look terrible on small page view unless they get some extra padding */
+@media (max-width: 992px) {
+  .navbar .top-nav-collapse .nav-link {
+      padding-right: 6px;
+      padding-left: 6px;
+  }
 }
 
 /* ========== ABOUT ME SPECIFIC ========== */

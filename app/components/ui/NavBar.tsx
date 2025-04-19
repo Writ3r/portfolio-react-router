@@ -115,7 +115,7 @@ export function NavBar() {
           <strong>Lucas Wing</strong>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className="top-nav-collapse">
           <Nav className="me-auto">
             <PortfolioNavLink
               id={HOME_ID}
