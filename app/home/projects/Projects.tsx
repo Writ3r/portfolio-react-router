@@ -188,8 +188,7 @@ function ProjectTabLink(props: PropsWithChildren<{ link: string }>) {
     <>
       <FontAwesomeIcon
         icon={faLink}
-        color="black"
-        className="animate__animated animate__pulse animate__infinite mr-2"
+        className="animate__animated animate__pulse animate__infinite fa-black-icon mr-2"
       />
       <a
         className="custom-link"
@@ -220,7 +219,7 @@ export function Projects() {
           <Col sm={3}>
             <Nav
               variant="pills"
-              className="flex-column lucas-pills projects-pills"
+              className="flex-column projects-pills"
               defaultActiveKey={DIGITAL_CMD_KEY}
             >
               <ProjectTabItem
@@ -230,8 +229,7 @@ export function Projects() {
               >
                 <FontAwesomeIcon
                   icon={faEnvelope}
-                  color="#2196f3"
-                  className="animate__animated animate__jello animate__infinite mr-2"
+                  className="animate__animated animate__jello animate__infinite fa-blue-icon mr-2"
                 />
                 Mailaway
               </ProjectTabItem>
@@ -242,8 +240,7 @@ export function Projects() {
               >
                 <FontAwesomeIcon
                   icon={faChartPie}
-                  color="#00bcd4"
-                  className="animate__animated animate__jello animate__infinite mr-2"
+                  className="animate__animated animate__jello animate__infinite fa-teal-icon mr-2"
                 />
                 Master Plan
               </ProjectTabItem>
@@ -254,8 +251,7 @@ export function Projects() {
               >
                 <FontAwesomeIcon
                   icon={faVolleyballBall}
-                  color="black"
-                  className="animate__animated animate__jello animate__infinite mr-2"
+                  className="animate__animated animate__jello animate__infinite fa-black-icon mr-2"
                 />
                 KSSPE Management
               </ProjectTabItem>
@@ -266,8 +262,7 @@ export function Projects() {
               >
                 <FontAwesomeIcon
                   icon={faTShirt}
-                  color="#3f51b5!"
-                  className="animate__animated animate__jello animate__infinite mr-2"
+                  className="animate__animated animate__jello animate__infinite fa-purple-icon mr-2"
                 />
                 Clothes Closet
               </ProjectTabItem>
@@ -278,8 +273,7 @@ export function Projects() {
               >
                 <FontAwesomeIcon
                   icon={faTrophy}
-                  color="#ebdc13"
-                  className="animate__animated animate__jello animate__infinite mr-2"
+                  className="animate__animated animate__jello animate__infinite fa-gold-icon mr-2"
                 />
                 Honorable Mentions
               </ProjectTabItem>

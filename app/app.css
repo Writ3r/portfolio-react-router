@@ -76,25 +76,9 @@ body, h1, h2, h3, h4, h5, h6 {
   margin-top: 30px;
 }
 
-/* arbitrary margin for Projects */
-.projects-pills {
-  margin-bottom:20px;
-}
-
 .nav-tabs .nav-link {
   color: #000000!important;
 }
-
-.lucas-pills.nav-pills .nav-link {
-  color: rgba(0,0,0,.9);
-  border: 1px solid #dee2e6 !important;
-}
-
-.lucas-pills.nav-pills .nav-link.active {
-  background-color: rgba(0,0,0,.8) !important;
-  color: rgba(255,255,255,.9)
-}
-
 
 /* ========== GENERAL ========== */
 
@@ -123,6 +107,14 @@ body {
 
 .fa-teal-icon {
   color: #00bcd4;
+}
+
+.fa-black-icon {
+  color: "black"
+}
+
+.fa-gold-icon {
+  color: #ebdc13;
 }
 
 /* for all text to be the same white */
@@ -237,6 +229,21 @@ body {
 
 /* fixes cursor to be the hand pointer for project modal opens */
 .custom-link:hover { cursor:pointer }
+
+.projects-pills.nav-pills .nav-link {
+  color: rgba(0,0,0,.9);
+  border: 1px solid #dee2e6 !important;
+}
+
+.projects-pills.nav-pills .nav-link.active {
+  background-color: rgba(0,0,0,.8) !important;
+  color: rgba(255,255,255,.9)
+}
+
+/* arbitrary margin for Projects pills to small screens look a tad better*/
+.projects-pills {
+  margin-bottom:20px;
+}
 
 /* ========== FOOTER SPECIFIC ========== */
 
