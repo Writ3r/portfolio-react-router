@@ -224,7 +224,7 @@ export function Projects() {
   const CLOTHES_CLOSET_KEY = "cc";
   const HONORABLE_MENTIONS_KEY = "hm";
   // react-bootstrap's active key appears broken with SSR, so need to manage it myself..
-  const [key, setKey] = useState(MAILAWAY_KEY);
+  const [key, setKey] = useState(PORTFOLIO_KEY);
   return (
     <section id="projects">
       <SectionTitle text="Projects" />
@@ -339,6 +339,32 @@ export function Projects() {
           </Col>
           <Col sm={9}>
             <TabContent>
+            <TabPane
+                active={key === PORTFOLIO_KEY}
+                eventKey={PORTFOLIO_KEY}
+              >
+                <Project
+                  info={{
+                    projName: "Portfolio Website",
+                    authors: "Lucas Wing",
+                    period: "2019 - PRESENT",
+                  }}
+                  overview="The website you're on right now! Take a look around and have fun. This website was created many years ago with pure html/css/js. 
+                  It was refactored it into create-react-app until that became effectively deprecated by 2024. 
+                  This most recent refactor moved everything over to react-router on Cloudflare Workers."
+                  tech={[
+                    { name: "Languages", desc: "Typescript, HTML, CSS" },
+                    {
+                      name: "Frameworks",
+                      desc: "React-Router [Remix], Typescript, Bootstrap",
+                    },
+                    { name: "Deployment", desc: "Cloudflare Workers [serverless]" },
+                  ]}
+                  conclusion="Deployment on the web is continually evolving and keeping up with it can be difficult. 
+                  Maintaining this website has shown me how much web app code has progressed in such a short time."
+                  pics={[]}
+                ></Project>
+              </TabPane>
               <TabPane
                 active={key === DIGITAL_CMD_KEY}
                 eventKey={DIGITAL_CMD_KEY}
