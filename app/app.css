@@ -1,15 +1,5 @@
 @import "tailwindcss";
 
-.carousel,
-.carousel .carousel-inner,
-.carousel .carousel-inner .active,
-.carousel .carousel-inner .carousel-item,
-.view,
-body,
-html {
-    height: 100%;
-}
-
 /* ========== GENERAL ========== */
 
 /* set general page font */
@@ -116,7 +106,8 @@ strong {
   width: 100%;
   overflow:hidden;
 }
-.carousel.full-page-carousel .carousel-inner {
+.carousel.full-page-carousel .carousel-inner,
+.carousel.full-page-carousel .carousel-item {
   height:100%;    
 }
 
@@ -142,6 +133,7 @@ strong {
   position: relative;
   overflow: hidden;
   cursor: default;
+  height: 100%;
 }
 
 .view video.video-intro {
