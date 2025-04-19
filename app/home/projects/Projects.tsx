@@ -224,7 +224,6 @@ export function Projects() {
   const MASTER_PLAN_KEY = "mp";
   const KSSPE_KEY = "km";
   const CLOTHES_CLOSET_KEY = "cc";
-  const HONORABLE_MENTIONS_KEY = "hm";
   // react-bootstrap's active key appears broken with SSR, so need to manage it myself..
   const [key, setKey] = useState(PORTFOLIO_KEY);
   return (
@@ -326,17 +325,6 @@ export function Projects() {
                 />
                 Clothes Closet
               </ProjectTabItem>
-              <ProjectTabItem
-                activeKey={key}
-                navKey={HONORABLE_MENTIONS_KEY}
-                setKey={setKey}
-              >
-                <FontAwesomeIcon
-                  icon={faTrophy}
-                  className="animate__animated animate__jello animate__infinite fa-gold-icon mr-2"
-                />
-                Honorable Mentions
-              </ProjectTabItem>
             </Nav>
           </Col>
           <Col sm={9}>
@@ -395,8 +383,8 @@ export function Projects() {
                     { name: "Documentation", desc: "OpenAPI" },
                     { name: "Database", desc: "MongoDB" },
                   ]}
-                  conclusion="I've been working on this project for quite awhile on and off. 
-                  It is a rather large project so I tend to take breaks and work other smaller projects like RootStore and Feature Clustering."
+                  conclusion="This project has been worked on and off for quite awhile on and off. 
+                  It is large so I tend to take breaks and work other smaller projects like RootStore and Feature Clustering."
                   pics={[]}
                 ></Project>
               </TabPane>
@@ -606,13 +594,6 @@ export function Projects() {
                     State Diagram
                   </ProjectTabLink>
                 </Project>
-              </TabPane>
-              <TabPane
-                active={key === HONORABLE_MENTIONS_KEY}
-                eventKey={HONORABLE_MENTIONS_KEY}
-              >
-                I'll fill this out later... There's a lot of projects I've
-                worked that warrent a mention but not a full section.
               </TabPane>
             </TabContent>
           </Col>

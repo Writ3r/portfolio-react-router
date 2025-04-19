@@ -111,7 +111,7 @@ export function NavBar() {
       fixed="top"
     >
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <strong>Lucas Wing</strong>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
