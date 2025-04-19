@@ -104,9 +104,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-/* fixes cursor to be the hand pointer for project modal opens */
-.custom-link:hover { cursor:pointer }
-
 /* fun button shake */
 .btn:hover {animation: swing 1s linear .3s infinite;}
 
@@ -235,6 +232,11 @@ body {
 .skills-item {
   margin-top: 15px;
 }
+
+/* ========== PROJECTS SPECIFIC ========== */
+
+/* fixes cursor to be the hand pointer for project modal opens */
+.custom-link:hover { cursor:pointer }
 
 /* ========== FOOTER SPECIFIC ========== */
 

@@ -26,10 +26,7 @@ import {
   faLink,
   faFolderOpen,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  FontAwesomeIcon,
-  type FontAwesomeIconProps,
-} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import clothesClosetItem from "./clothescloset/ClothesClosetItem.png";
 import clothesClosetMenue from "./clothescloset/ClothesClosetMainMenue.png";
@@ -123,9 +120,9 @@ const Project = (props: {
       <ProjectItemBody>
         {props.tech.map((tech) => {
           return (
-            <div key={tech.name}>
+            <span key={tech.name}>
               <strong>{tech.name}:</strong> {tech.desc} <br />
-            </div>
+            </span>
           );
         })}
       </ProjectItemBody>
@@ -166,13 +163,54 @@ const Project = (props: {
   );
 };
 
+function ProjectTabItem(
+  props: PropsWithChildren<{
+    navKey: string;
+    activeKey: string;
+    setKey: (key: string) => void;
+  }>
+) {
+  return (
+    <NavItem>
+      <NavLink
+        active={props.activeKey === props.navKey}
+        onClick={() => props.setKey(props.navKey)}
+        eventKey={props.navKey}
+      >
+        {props.children}
+      </NavLink>
+    </NavItem>
+  );
+}
+
+function ProjectTabLink(props: PropsWithChildren<{ link: string }>) {
+  return (
+    <>
+      <FontAwesomeIcon
+        icon={faLink}
+        color="black"
+        className="animate__animated animate__pulse animate__infinite mr-2"
+      />
+      <a
+        className="custom-link"
+        href={props.link}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {props.children}
+      </a>
+      <br />
+    </>
+  );
+}
+
 export function Projects() {
   // react-bootstrap's active key appears broken with SSR, so need to manage it myself..
   const [key, setKey] = useState("dc");
   return (
     <section id="projects">
       <SectionTitle text="Projects" />
-      <TabContainer id="left-tabs-example" defaultActiveKey="first">
+      <TabContainer defaultActiveKey="first">
         <Row>
           <Col sm={3}>
             <Nav
@@ -180,76 +218,46 @@ export function Projects() {
               className="flex-column lucas-pills projects-pills"
               defaultActiveKey="dc"
             >
-              <NavItem>
-                <NavLink
-                  active={key === "dc"}
-                  onClick={() => setKey("dc")}
-                  eventKey="dc"
-                >
-                  <FontAwesomeIcon
-                    icon={faEnvelope}
-                    color="#2196f3"
-                    className="animate__animated animate__jello animate__infinite mr-2"
-                  />
-                  Mailaway
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  active={key === "mp"}
-                  onClick={() => setKey("mp")}
-                  eventKey="mp"
-                >
-                  <FontAwesomeIcon
-                    icon={faChartPie}
-                    color="#00bcd4"
-                    className="animate__animated animate__jello animate__infinite mr-2"
-                  />
-                  Master Plan
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  active={key === "km"}
-                  onClick={() => setKey("km")}
-                  eventKey="km"
-                >
-                  <FontAwesomeIcon
-                    icon={faVolleyballBall}
-                    color="black"
-                    className="animate__animated animate__jello animate__infinite mr-2"
-                  />
-                  KSSPE Management
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  active={key === "cc"}
-                  onClick={() => setKey("cc")}
-                  eventKey="cc"
-                >
-                  <FontAwesomeIcon
-                    icon={faTShirt}
-                    color="#3f51b5!"
-                    className="animate__animated animate__jello animate__infinite mr-2"
-                  />
-                  Clothes Closet
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  active={key === "hm"}
-                  onClick={() => setKey("hm")}
-                  eventKey="hm"
-                >
-                  <FontAwesomeIcon
-                    icon={faTrophy}
-                    color="#ebdc13"
-                    className="animate__animated animate__jello animate__infinite mr-2"
-                  />
-                  Honorable Mentions
-                </NavLink>
-              </NavItem>
+              <ProjectTabItem activeKey={key} navKey="dc" setKey={setKey}>
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  color="#2196f3"
+                  className="animate__animated animate__jello animate__infinite mr-2"
+                />
+                Mailaway
+              </ProjectTabItem>
+              <ProjectTabItem activeKey={key} navKey="mp" setKey={setKey}>
+                <FontAwesomeIcon
+                  icon={faChartPie}
+                  color="#00bcd4"
+                  className="animate__animated animate__jello animate__infinite mr-2"
+                />
+                Master Plan
+              </ProjectTabItem>
+              <ProjectTabItem activeKey={key} navKey="km" setKey={setKey}>
+                <FontAwesomeIcon
+                  icon={faVolleyballBall}
+                  color="black"
+                  className="animate__animated animate__jello animate__infinite mr-2"
+                />
+                KSSPE Management
+              </ProjectTabItem>
+              <ProjectTabItem activeKey={key} navKey="cc" setKey={setKey}>
+                <FontAwesomeIcon
+                  icon={faTShirt}
+                  color="#3f51b5!"
+                  className="animate__animated animate__jello animate__infinite mr-2"
+                />
+                Clothes Closet
+              </ProjectTabItem>
+              <ProjectTabItem activeKey={key} navKey="hm" setKey={setKey}>
+                <FontAwesomeIcon
+                  icon={faTrophy}
+                  color="#ebdc13"
+                  className="animate__animated animate__jello animate__infinite mr-2"
+                />
+                Honorable Mentions
+              </ProjectTabItem>
             </Nav>
           </Col>
           <Col sm={9}>
@@ -300,20 +308,9 @@ export function Projects() {
                             The underlying idea is good, it just needs better execution and functionality."
                   pics={MASTER_PLAN_PICS}
                 >
-                  <a
-                    className="custom-link"
-                    href="https://www.master-plan.me/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FontAwesomeIcon
-                      icon={faLink}
-                      color="black"
-                      className="animate__animated animate__pulse animate__infinite mr-2"
-                    />
+                  <ProjectTabLink link={"https://www.master-plan.me/"}>
                     Website
-                  </a>
-                  <br />
+                  </ProjectTabLink>
                 </Project>
               </TabPane>
               <TabPane active={key === "km"} eventKey="km">
@@ -336,76 +333,25 @@ export function Projects() {
                           to refine our Java skills before moving into the professional world."
                   pics={KSSPE_PICS}
                 >
-                  <a
-                    className="custom-link"
-                    href="https://github.com/Writ3r/KSSPE-Project"
-                    target="_blank"
-                    rel="noreferrer"
+                  <ProjectTabLink
+                    link={"https://github.com/Writ3r/KSSPE-Project"}
                   >
-                    <FontAwesomeIcon
-                      icon={faLink}
-                      color="black"
-                      className="animate__animated animate__pulse animate__infinite mr-2"
-                    />
                     Github
-                  </a>
-                  <br />
-                  <a
-                    className="custom-link"
-                    href={ksspeERD}
-                    target="_blank"
-                    rel="noreferrer"
+                  </ProjectTabLink>
+                  <ProjectTabLink link={ksspeERD}>ERD</ProjectTabLink>
+                  <ProjectTabLink
+                    link={
+                      "https://docs.google.com/document/d/1xK-V8XTjA9ArEFn9ioepw284b4NFE3bnGWWVYr8B2Yc/edit?usp=sharing"
+                    }
                   >
-                    <FontAwesomeIcon
-                      icon={faLink}
-                      color="black"
-                      className="animate__animated animate__pulse animate__infinite mr-2"
-                    />
-                    ERD
-                  </a>
-                  <br />
-                  <a
-                    className="custom-link"
-                    href="https://docs.google.com/document/d/1xK-V8XTjA9ArEFn9ioepw284b4NFE3bnGWWVYr8B2Yc/edit?usp=sharing"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FontAwesomeIcon
-                      icon={faLink}
-                      color="black"
-                      className="animate__animated animate__pulse animate__infinite mr-2"
-                    />
                     Use Cases
-                  </a>
-                  <br />
-                  <a
-                    className="custom-link"
-                    href={ksspeSeq}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FontAwesomeIcon
-                      icon={faLink}
-                      color="black"
-                      className="animate__animated animate__pulse animate__infinite mr-2"
-                    />
+                  </ProjectTabLink>
+                  <ProjectTabLink link={ksspeSeq}>
                     Sequence Diagrams
-                  </a>
-                  <br />
-                  <a
-                    className="custom-link"
-                    href={ksspeState}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FontAwesomeIcon
-                      icon={faLink}
-                      color="black"
-                      className="animate__animated animate__pulse animate__infinite mr-2"
-                    />
+                  </ProjectTabLink>
+                  <ProjectTabLink link={ksspeState}>
                     State Diagram
-                  </a>
-                  <br />
+                  </ProjectTabLink>
                 </Project>
               </TabPane>
               <TabPane active={key === "cc"} eventKey="cc">
@@ -429,62 +375,24 @@ export function Projects() {
                           was primarily a learning experience."
                   pics={CLOTHES_CLOSET_PICS}
                 >
-                  <a
-                    className="custom-link"
-                    href="https://github.com/ntyler1/ClothesClosetProject"
-                    target="_blank"
-                    rel="noreferrer"
+                  <ProjectTabLink
+                    link={"https://github.com/ntyler1/ClothesClosetProject"}
                   >
-                    <FontAwesomeIcon
-                      icon={faLink}
-                      color="black"
-                      className="animate__animated animate__pulse animate__infinite mr-2"
-                    />
                     Github
-                  </a>
-                  <br />
-                  <a
-                    className="custom-link"
-                    href="https://docs.google.com/document/d/1V_fU_oXI0yl9uo8K4Jrjk2z4EVXhlHpVYsNIxQbXJYs/edit?usp=sharing"
-                    target="_blank"
-                    rel="noreferrer"
+                  </ProjectTabLink>
+                  <ProjectTabLink
+                    link={
+                      "https://docs.google.com/document/d/1V_fU_oXI0yl9uo8K4Jrjk2z4EVXhlHpVYsNIxQbXJYs/edit?usp=sharing"
+                    }
                   >
-                    <FontAwesomeIcon
-                      icon={faLink}
-                      color="black"
-                      className="animate__animated animate__pulse animate__infinite mr-2"
-                    />
                     Use Cases
-                  </a>
-                  <br />
-                  <a
-                    className="custom-link"
-                    href={clothesSeq}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FontAwesomeIcon
-                      icon={faLink}
-                      color="black"
-                      className="animate__animated animate__pulse animate__infinite mr-2"
-                    />
+                  </ProjectTabLink>
+                  <ProjectTabLink link={clothesSeq}>
                     Sequence Diagrams
-                  </a>
-                  <br />
-                  <a
-                    className="custom-link"
-                    href={clothesState}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FontAwesomeIcon
-                      icon={faLink}
-                      color="black"
-                      className="animate__animated animate__pulse animate__infinite mr-2"
-                    />
+                  </ProjectTabLink>
+                  <ProjectTabLink link={clothesState}>
                     State Diagram
-                  </a>
-                  <br />
+                  </ProjectTabLink>
                 </Project>
               </TabPane>
               <TabPane active={key === "hm"} eventKey="hm">
