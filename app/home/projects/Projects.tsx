@@ -400,7 +400,44 @@ export function Projects() {
                   pics={[]}
                 ></Project>
               </TabPane>
-              <TabPane active={key === FEATURE_CLUSTERING_KEY} eventKey={FEATURE_CLUSTERING_KEY}>
+              <TabPane active={key === ROOTSTORE_KEY} eventKey={ROOTSTORE_KEY}>
+                <Project
+                  info={{
+                    projName: "RootStore and Open Feature Search (OFS)",
+                    authors: "Lucas Wing",
+                    period: "Jan 2024 - March 2025",
+                  }}
+                  overview="OFS and RootStore are two data modeling solutions for storage & querying of features. 
+                  OFS came first as an idea to model data using a graph based database. 
+                  Afer finishing with OFS, I implemented RootStore using OpenSearch instead of JanusGraph & fixed some fundamental design mistakes."
+                  tech={[
+                    { name: "Languages", desc: "Java, TypeScript" },
+                    {
+                      name: "Test Frameworks",
+                      desc: "vitest, junit",
+                    },
+                    {
+                      name: "Test Coverage",
+                      desc: "~95%",
+                    },
+                    { name: "OFS Database", desc: "Junusgraph (Cassandra Storage Backend, Opensearch Index Backend)" },
+                    { name: "RootStore Database", desc: "OpenSearch" },
+                  ]}
+                  pics={[]}
+                  conclusion="OFS ended up working as intended but was somewhat of a failure due to JanusGraph's difficult to use search functionality.
+                  GQL is hard to work with beyond graph specific queries. But where OFS failed, RootStore succeeded. I intend to use RootStore as the backend to some of my future data storage apps."
+                >
+                  <ProjectTabLink
+                    link={"https://github.com/Writ3r/open-feature-search"}
+                  >
+                    OFS Source Code
+                  </ProjectTabLink>
+                </Project>
+              </TabPane>
+              <TabPane
+                active={key === FEATURE_CLUSTERING_KEY}
+                eventKey={FEATURE_CLUSTERING_KEY}
+              >
                 <Project
                   info={{
                     projName: "Facial & Generic Feature Clustering",
@@ -423,7 +460,11 @@ export function Projects() {
                   I met the goal I was looking to learn, and at some point I intend to integrate this stack into other projects."
                   pics={[]}
                 >
-                  <ProjectTabLink link={"https://sefiks.com/2020/11/27/large-scale-face-recognition-with-elasticsearch/"}>
+                  <ProjectTabLink
+                    link={
+                      "https://sefiks.com/2020/11/27/large-scale-face-recognition-with-elasticsearch/"
+                    }
+                  >
                     Great Article
                   </ProjectTabLink>
                 </Project>
