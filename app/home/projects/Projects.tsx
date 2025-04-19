@@ -27,7 +27,7 @@ import {
   faFolderOpen,
   faCircleNodes,
   faSolarPanel,
-  faHardDrive
+  faHardDrive,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -132,14 +132,16 @@ const Project = (props: {
       <ProjectItemHeader text="Resources" />
       <p>
         {props.children}
-        <a onClick={() => setShowModal(true)} className="custom-link">
-          <FontAwesomeIcon
-            icon={faFolderOpen}
-            color="black"
-            className="animate__animated animate__pulse animate__infinite mr-2"
-          />
-          Pictures
-        </a>
+        {props.pics.length > 0 ? (
+          <a onClick={() => setShowModal(true)} className="custom-link">
+            <FontAwesomeIcon
+              icon={faFolderOpen}
+              color="black"
+              className="animate__animated animate__pulse animate__infinite mr-2"
+            />
+            Pictures
+          </a>
+        ) : <p><i>No provided pictures at this time...</i></p>}
       </p>
       <ProjectItemHeader text="Concluding Thoughts" />
       <ProjectItemBody>{props.conclusion}</ProjectItemBody>
@@ -321,9 +323,34 @@ export function Projects() {
           <Col sm={9}>
             <TabContent>
               <TabPane
-                active={key === MAILAWAY_KEY}
-                eventKey={MAILAWAY_KEY}
+                active={key === DIGITAL_CMD_KEY}
+                eventKey={DIGITAL_CMD_KEY}
               >
+                <Project
+                  info={{
+                    projName: "Digital Command",
+                    authors: "Lucas Wing",
+                    period: "June 2022 - PRESENT",
+                  }}
+                  overview="Users can create & download a digital distribution of programs which are usable offline. 
+                  It has both a website for purchasing the program with stripe, downloading it, and purchasing extra features
+                  The program itself is an electron app using electron-forge and react + typescript."
+                  tech={[
+                    { name: "Languages", desc: "Java, Typescript, CSS, HTML" },
+                    {
+                      name: "Frameworks",
+                      desc: "NextJS [frontend], Spring-Boot [backend], React, Bootstrap, Electron Forge",
+                    },
+                    { name: "Deployment", desc: "Docker, Kubernetes" },
+                    { name: "Documentation", desc: "OpenAPI" },
+                    { name: "Database", desc: "MongoDB" },
+                  ]}
+                  conclusion="I've been working on this project for quite awhile on and off. 
+                  It is a rather large project so I tend to take breaks and work other smaller projects like RootStore and Feature Clustering."
+                  pics={[]}
+                ></Project>
+              </TabPane>
+              <TabPane active={key === MAILAWAY_KEY} eventKey={MAILAWAY_KEY}>
                 <Project
                   info={{
                     projName: "Mailaway",
