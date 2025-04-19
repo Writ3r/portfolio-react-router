@@ -400,14 +400,42 @@ export function Projects() {
                   pics={[]}
                 ></Project>
               </TabPane>
+              <TabPane active={key === FEATURE_CLUSTERING_KEY} eventKey={FEATURE_CLUSTERING_KEY}>
+                <Project
+                  info={{
+                    projName: "Facial & Generic Feature Clustering",
+                    authors: "Lucas Wing",
+                    period: "December 2024 - January 2025",
+                  }}
+                  overview="This project was aimed at understanding how billion scale facial clustering solutions like PrimEyes work. 
+                  After some research, I was able to figure out how to use OpenSearch to store facial feature vectors extracted by DeepFace & search them via KNN.
+                  This then led me to implement a similar solution using OpenClip for more generic image similarity searches."
+                  tech={[
+                    { name: "Languages", desc: "Python" },
+                    {
+                      name: "Used Libraries",
+                      desc: "OpenClip, DeepFace, RabbitMQ",
+                    },
+                    { name: "Deployment", desc: "Docker" },
+                    { name: "Job Queue System", desc: "RabbitMQ" },
+                  ]}
+                  conclusion="I was able to come up with a super interesting working example of both facial similarity & generic image similarity searches.
+                  I met the goal I was looking to learn, and at some point I intend to integrate this stack into other projects."
+                  pics={[]}
+                >
+                  <ProjectTabLink link={"https://sefiks.com/2020/11/27/large-scale-face-recognition-with-elasticsearch/"}>
+                    Great Article
+                  </ProjectTabLink>
+                </Project>
+              </TabPane>
               <TabPane active={key === MAILAWAY_KEY} eventKey={MAILAWAY_KEY}>
                 <Project
                   info={{
                     projName: "Mailaway",
                     authors: "Lucas Wing",
-                    period: "April 2021 - PRESENT",
+                    period: "April 2021 - July 2021",
                   }}
-                  overview="API-powered throwaway email account service. Will have a minimal frontend, and developer-centric backend for
+                  overview="API-powered throwaway email account service. This was intended to have a minimal frontend, and developer-centric backend for
                           third-party integrators to use it in their own solutions. It's backed by Wildduck, a MongoDB backed extremely scalable email solution."
                   tech={[
                     { name: "Languages", desc: "Java, JavaScript, HTML, CSS" },
@@ -420,9 +448,8 @@ export function Projects() {
                     { name: "Database", desc: "MongoDB" },
                     { name: "Metrics", desc: "Prometheus/Grafana" },
                   ]}
-                  conclusion="The primary purpose of this project is to learn how spring-boot works.
-                          I doubt this'll ever kick off enough to actually be profitable, and that's alright.
-                          If I can get real-world experience with spring-boot, I'm happy with the outcome."
+                  conclusion="The primary purpose of this project was to learn how spring-boot works.
+                          I met that goal, and eventually ended up abandoning this project (after making the API work), since I don't see much of a market for this.."
                   pics={MAILAWAY_PICS}
                 ></Project>
               </TabPane>
