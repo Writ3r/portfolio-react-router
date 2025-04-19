@@ -35,39 +35,17 @@ strong {
   font-weight: 500;
 }
 
-.btn-outline-light {
-  color: #fff;
-  border: 2px solid #fff !important;
-  background-color: transparent;
-  transition: all 0.3s ease;
-}
-.btn-outline-light:hover,
-.btn-outline-light:focus {
-  color: #fff;
-  background-color: transparent;
-  border-color: #fff;
-}
-
-footer.page-footer .footer-copyright {
-  overflow: hidden;
-  color: hsla(0,0%,100%,.6);
-  background-color: rgba(0,0,0,.2);
-}
-
-footer.page-footer a {
-  color: #fff;
-}
-
-body, h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-}
-
 /* ========== GENERAL ========== */
 
 /* set general page font */
 html,
 body {
   font-family: "Roboto", sans-serif;
+}
+
+/* set general page font weight */
+body, h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
 }
 
 /* fun button shake */
@@ -115,8 +93,23 @@ body {
   color: #636363!important;
 }
 
+/* standardize small font */
 .font-small {
   font-size: .9rem;
+}
+
+/* create some default styles for white outlined buttons */
+.btn-outline-light {
+  color: #fff;
+  border: 2px solid #fff !important;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
 }
 
 /* ========== CAROUSEL SPECIFIC ========== */
@@ -253,4 +246,16 @@ body {
 /* gives footer its notable background color */
 footer {
   background-color: #1c2331;
+}
+
+/* make footer links white */
+footer.page-footer a {
+  color: #fff;
+}
+
+/* style the footer copyright section */
+footer.page-footer .footer-copyright {
+  overflow: hidden;
+  color: hsla(0,0%,100%,.6);
+  background-color: rgba(0,0,0,.2);
 }
