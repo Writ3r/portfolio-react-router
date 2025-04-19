@@ -28,6 +28,7 @@ import {
   faCircleNodes,
   faSolarPanel,
   faHardDrive,
+  faDesktop,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -141,7 +142,11 @@ const Project = (props: {
             />
             Pictures
           </a>
-        ) : <p><i>No provided pictures at this time...</i></p>}
+        ) : (
+          <p>
+            <i>No provided pictures at this time...</i>
+          </p>
+        )}
       </p>
       <ProjectItemHeader text="Concluding Thoughts" />
       <ProjectItemBody>{props.conclusion}</ProjectItemBody>
@@ -212,6 +217,7 @@ export function Projects() {
   const ROOTSTORE_KEY = "rts";
   const FEATURE_CLUSTERING_KEY = "fc";
   const DIGITAL_CMD_KEY = "dc";
+  const PORTFOLIO_KEY = "port";
   const MAILAWAY_KEY = "ma";
   const MASTER_PLAN_KEY = "mp";
   const KSSPE_KEY = "km";
@@ -228,8 +234,19 @@ export function Projects() {
             <Nav
               variant="pills"
               className="flex-column projects-pills"
-              defaultActiveKey={DIGITAL_CMD_KEY}
+              defaultActiveKey={PORTFOLIO_KEY}
             >
+              <ProjectTabItem
+                activeKey={key}
+                navKey={PORTFOLIO_KEY}
+                setKey={setKey}
+              >
+                <FontAwesomeIcon
+                  icon={faDesktop}
+                  className="animate__animated animate__jello animate__infinite fa-black-icon mr-2"
+                />
+                Portfolio Website
+              </ProjectTabItem>
               <ProjectTabItem
                 activeKey={key}
                 navKey={DIGITAL_CMD_KEY}
@@ -248,7 +265,7 @@ export function Projects() {
               >
                 <FontAwesomeIcon
                   icon={faHardDrive}
-                  className="animate__animated animate__jello animate__infinite fa-black-icon mr-2"
+                  className="animate__animated animate__jello animate__infinite fa-grey-icon mr-2"
                 />
                 RootStore / OFS
               </ProjectTabItem>
