@@ -25,6 +25,9 @@ import {
   faTShirt,
   faLink,
   faFolderOpen,
+  faCircleNodes,
+  faSolarPanel,
+  faHardDrive
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -204,13 +207,16 @@ function ProjectTabLink(props: PropsWithChildren<{ link: string }>) {
 }
 
 export function Projects() {
+  const ROOTSTORE_KEY = "rts";
+  const FEATURE_CLUSTERING_KEY = "fc";
   const DIGITAL_CMD_KEY = "dc";
+  const MAILAWAY_KEY = "ma";
   const MASTER_PLAN_KEY = "mp";
   const KSSPE_KEY = "km";
   const CLOTHES_CLOSET_KEY = "cc";
   const HONORABLE_MENTIONS_KEY = "hm";
   // react-bootstrap's active key appears broken with SSR, so need to manage it myself..
-  const [key, setKey] = useState(DIGITAL_CMD_KEY);
+  const [key, setKey] = useState(MAILAWAY_KEY);
   return (
     <section id="projects">
       <SectionTitle text="Projects" />
@@ -228,8 +234,41 @@ export function Projects() {
                 setKey={setKey}
               >
                 <FontAwesomeIcon
-                  icon={faEnvelope}
+                  icon={faSolarPanel}
                   className="animate__animated animate__jello animate__infinite fa-blue-icon mr-2"
+                />
+                Digital Command
+              </ProjectTabItem>
+              <ProjectTabItem
+                activeKey={key}
+                navKey={ROOTSTORE_KEY}
+                setKey={setKey}
+              >
+                <FontAwesomeIcon
+                  icon={faHardDrive}
+                  className="animate__animated animate__jello animate__infinite fa-black-icon mr-2"
+                />
+                RootStore / OFS
+              </ProjectTabItem>
+              <ProjectTabItem
+                activeKey={key}
+                navKey={FEATURE_CLUSTERING_KEY}
+                setKey={setKey}
+              >
+                <FontAwesomeIcon
+                  icon={faCircleNodes}
+                  className="animate__animated animate__jello animate__infinite fa-purple-icon mr-2"
+                />
+                [AI] Feature Clustering
+              </ProjectTabItem>
+              <ProjectTabItem
+                activeKey={key}
+                navKey={MAILAWAY_KEY}
+                setKey={setKey}
+              >
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="animate__animated animate__jello animate__infinite mr-2 fa-green-icon"
                 />
                 Mailaway
               </ProjectTabItem>
@@ -282,8 +321,8 @@ export function Projects() {
           <Col sm={9}>
             <TabContent>
               <TabPane
-                active={key === DIGITAL_CMD_KEY}
-                eventKey={DIGITAL_CMD_KEY}
+                active={key === MAILAWAY_KEY}
+                eventKey={MAILAWAY_KEY}
               >
                 <Project
                   info={{

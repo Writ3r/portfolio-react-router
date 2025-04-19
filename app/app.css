@@ -35,6 +35,9 @@ body, h1, h2, h3, h4, h5, h6 {
 .fa-gold-icon {
   color: #ebdc13;
 }
+.fa-green-icon {
+  color: #63E6BE;
+}
 
 /* for all text to be the same white */
 .white-text {
