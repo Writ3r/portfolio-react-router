@@ -108,12 +108,11 @@ export function Experience() {
                   startingPos: "Summer Help",
                   period: "July 2012 - August 2018",
                 }}
-                respon="Supporting the custodial staff in cleaning out the school district over the summer. Required teams of people working together to clean all classroom furnature, 
-                      and clean + wax the floors. In addition, did some yard work as well if we had some extra time."
+                respon="Supporting the custodial staff in cleaning out the school district over the summer. This required teams of people working together to clean all classroom & office furnature 
+                      and floors. In addition, there was yard work as well if we had some extra time."
                 awards="None offered for this job. The reward was coming back the next year if you did well enough."
-                progress="Learned about working in a team-based environment to accomplish tasks which are far too large to accomplish on my own.
-                      I also learned humility. My co-workers were amazing. Some of the best, most hardworking people I've ever met. Just because
-                      programming is a more in-demand field in job market, doesn't make it any more of less of a job than that of custodial staff."
+                progress="Learned about working in a team-based environment to accomplish tasks too large to accomplish on my own.
+                      This job also helped give me perspective on what true 'work' is beyond a partial day weekend job. It was a great learning experience and working with the people there was a great time."
               />
             </Tab>
             <Tab
@@ -134,11 +133,11 @@ export function Experience() {
                   startingPos: "Worker",
                   period: "October 2011 - November 2012",
                 }}
-                respon="Worked with a few other people to run the bounce houses over the weekends. We'd get a group of kids going,
-                      inform them of the rules, monitor them in the bounce houses for a few minutes, then bring them back to their parents."
+                respon="Helped run the bounce houses for kids over the weekends. This job involved getting a group of kids together,
+                      informing them of the rules, and monitoring them in the bounce houses for a few minutes."
                 awards="None offered for this job. The reward was coming back the next year if you did well enough."
                 progress="This was my first actual job. It taught me the ins/outs of working for a company, having real responsibility,
-                      and how to manage actually having extra money. This was an invaluable stepping stone for someone my age."
+                      and how to manage having extra money. This was an invaluable stepping stone for someone my age to understand real world work."
               />
             </Tab>
           </Tabs>

@@ -204,6 +204,16 @@ function ProjectTabLink(props: PropsWithChildren<{ link: string }>) {
   );
 }
 
+function ProjectTabPane(
+  props: PropsWithChildren<{ activeKey: string; key: string }>
+) {
+  return (
+    <TabPane active={props.activeKey === props.key} eventKey={props.key}>
+      {props.children}
+    </TabPane>
+  );
+}
+
 export function Projects() {
   // react-bootstrap's active key appears broken with SSR, so need to manage it myself..
   const [key, setKey] = useState("dc");

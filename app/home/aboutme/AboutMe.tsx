@@ -63,7 +63,7 @@ export function AboutMe() {
           />
           <Skill
             name="Problem Solver"
-            desc="Problems exist to be solved. My goal is to help that process along."
+            desc="Problems exist to be solved. I intend to facilitate that process to its logical conclusion."
             fontAwesomeIconProps={{
               icon: faGraduationCap,
               size: "2x",
@@ -74,7 +74,7 @@ export function AboutMe() {
         <Col lg="6" md="12">
           <Skill
             name="Gamer"
-            desc="Destiny, League of Legends, Minecraft, OSRS, etc. I've played numerous games and love them all."
+            desc="I love gaming, it's a great social experience. Some example games - Destiny, League of Legends, Minecraft, and OSRS."
             fontAwesomeIconProps={{
               icon: faGamepad,
               size: "2x",
@@ -83,7 +83,7 @@ export function AboutMe() {
           />
           <Skill
             name="Hiker"
-            desc="Mountains, valleys, deserts, fields. Hiking is my preferred method to experience it all."
+            desc="Hiking is my preferred method to experience world. It's a relaxing activity and great exercise."
             fontAwesomeIconProps={{
               icon: faHiking,
               size: "2x",
@@ -92,7 +92,7 @@ export function AboutMe() {
           />
           <Skill
             name="Walker"
-            desc="Turn on some music, chillax, and take a few mile walk. That's the life I like to live."
+            desc="If I can't hike, I'll walk! A quick walk a day helps keep me happy and healthy."
             fontAwesomeIconProps={{
               icon: faWalking,
               size: "2x",
