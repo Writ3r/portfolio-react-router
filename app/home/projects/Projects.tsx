@@ -346,7 +346,11 @@ export function Projects() {
                       desc: "React-Router [Remix], Typescript, Bootstrap",
                     },
                     {
-                      name: "Deployment",
+                      name: "Automatic Deployment",
+                      desc: "Github Actions",
+                    },
+                    {
+                      name: "Hosting",
                       desc: "Cloudflare Workers [serverless]",
                     },
                   ]}
@@ -403,6 +407,10 @@ export function Projects() {
                     {
                       name: "Test Frameworks",
                       desc: "vitest, junit",
+                    },
+                    {
+                      name: "Automatic Deployment",
+                      desc: "Github Actions",
                     },
                     {
                       name: "Test Coverage",
