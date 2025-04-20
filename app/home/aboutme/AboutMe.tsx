@@ -74,7 +74,7 @@ export function AboutMe() {
         <Col lg="6" md="12">
           <Skill
             name="Gamer"
-            desc="I love gaming, it's a great social experience. Some example games - Destiny, League of Legends, Minecraft, and OSRS."
+            desc="Gaming is awesome, it's a great social experience. Some games I play - Destiny, League of Legends, Minecraft, and OSRS."
             fontAwesomeIconProps={{
               icon: faGamepad,
               size: "2x",
