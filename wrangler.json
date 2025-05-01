@@ -10,6 +10,10 @@
 	"compatibility_flags": [
 		"nodejs_compat"
 	],
+	"route": {
+		"pattern": "lucaswing.com",
+		"custom_domain": true
+	},
 	"observability": {
 		"enabled": true
 	},
