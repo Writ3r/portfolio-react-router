@@ -1,8 +1,8 @@
 {
-  "name": "react-router-starter-template",
-  "description": "Build a full-stack web application with React Router 7.",
+  "name": "portfolio-react-router",
+  "description": "Lucas Wing's portfolio using react-router",
   "cloudflare": {
-    "label": "React Router Framework Starter",
+    "label": "Portfolio React Router",
     "products": [
       "Workers"
     ],
