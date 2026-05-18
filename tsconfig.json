@@ -10,13 +10,8 @@
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
-    "paths": {
-      "~/*": [
-        "./app/*"
-      ]
-    }, 
     "types": [
-        "@cloudflare/workers-types/2023-07-01"
+        "./worker-configuration.d.ts"
     ]
   }
 }

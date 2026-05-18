@@ -250,6 +250,17 @@ export function Projects() {
               </ProjectTabItem>
               <ProjectTabItem
                 activeKey={key}
+                navKey={MASTER_PLAN_KEY}
+                setKey={setKey}
+              >
+                <FontAwesomeIcon
+                  icon={faChartPie}
+                  className="animate__animated animate__jello animate__infinite fa-teal-icon mr-2"
+                />
+                Master Plan
+              </ProjectTabItem>
+              <ProjectTabItem
+                activeKey={key}
                 navKey={DIGITAL_CMD_KEY}
                 setKey={setKey}
               >
@@ -291,17 +302,6 @@ export function Projects() {
                   className="animate__animated animate__jello animate__infinite mr-2 fa-green-icon"
                 />
                 Mailaway
-              </ProjectTabItem>
-              <ProjectTabItem
-                activeKey={key}
-                navKey={MASTER_PLAN_KEY}
-                setKey={setKey}
-              >
-                <FontAwesomeIcon
-                  icon={faChartPie}
-                  className="animate__animated animate__jello animate__infinite fa-teal-icon mr-2"
-                />
-                Master Plan
               </ProjectTabItem>
               <ProjectTabItem
                 activeKey={key}
@@ -503,18 +503,20 @@ export function Projects() {
                   overview="Financial projection service. Takes a user's current financial state, and projects it into the future.
                           Useful for testing different financial outcomes of your decisions, and not requiring experience with excel."
                   tech={[
-                    { name: "Languages", desc: "PHP, Javascript, HTML, CSS" },
+                    { name: "Languages", desc: "TypeScript, HTML, CSS, SQL" },
                     { name: "Frameworks", desc: "Bootstrap" },
-                    { name: "Database", desc: "MySQL" },
+                    { name: "Database", desc: "SQLite" },
                   ]}
                   conclusion="This project was my first major solo endevor to create an actually working webapp.
-                            Was it optimal? No. Is there a lot of bugs? Probabily. But it served its purpose.
-                            In the next few years at some point I'll likely come back and revamp this project.
-                            The underlying idea is good, it just needs better execution and functionality."
+                            It was originally written in PHP, vanilla JavaScript, HTML, and CSS. I recently open sourced this and
+                            refactored it over to use react-router. That allowed for serverless hosting and moving the site to Cloudflare."
                   pics={MASTER_PLAN_PICS}
                 >
-                  <ProjectTabLink link={"https://www.master-plan.me/"}>
+                  <ProjectTabLink link={"https://master-plan.me/"}>
                     Website
+                  </ProjectTabLink>
+                  <ProjectTabLink link={"https://github.com/Writ3r/master-plan"}>
+                    Source Code
                   </ProjectTabLink>
                 </Project>
               </TabPane>
