@@ -498,7 +498,7 @@ export function Projects() {
                   info={{
                     projName: "Master Plan",
                     authors: "Lucas Wing",
-                    period: "January 2019 - January 2020",
+                    period: "January 2019 - January 2020 (Refactored May 2026)",
                   }}
                   overview="Financial projection service. Takes a user's current financial state, and projects it into the future.
                           Useful for testing different financial outcomes of your decisions, and not requiring experience with excel."
