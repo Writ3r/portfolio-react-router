@@ -72,7 +72,7 @@ export function Experience() {
                     color="#3f51b5"
                     className="animate__animated animate__jello animate__infinite"
                   />{" "}
-                  BAE Systems - Software Engineer
+                  BAE Systems - Senior Principal Software Engineer
                 </>
               }
             >
@@ -80,14 +80,14 @@ export function Experience() {
                 info={{
                   startingPos: "Software Engineer 1 ",
                   period: "June 2019 - PRESENT",
-                  currentPosition: "Senior Software Engineer",
+                  currentPosition: "Senior Principal Software Engineer",
                 }}
-                respon="Designing and developing GXP Platform's Service infastructure locally and in the cloud with occasional webclient changes. 
-                      During innovation sprints, created dev support related tools to increase efficiency debugging and building our applications."
-                awards="All of my performance reviews have had excellent scores. In addition, I've achieved multiple Impact awards for feature and/or contract related work."
-                progress="Progressing my ability to write enterprise-grade code in both the server-side and in cloud environments.
-                      We actively work with REST endoints, messaging systems, SQL & NoSQL databases, dependency injection, and service-oriented architecture.
-                      In the cloud we work with Docker containers, Kubernetes, and Rancher."
+                respon="Designing and developing GXP Platform's Service infastructure locally and in the cloud. 
+                Tech leading our team of Service Infastructure engineers to achieve our feature requirements. Reviewing PRs and aiding Architects in Epic breakdowns into features.
+                Working with third-parties and customers directly to solve complex problems and provide solutions."
+                awards="All of my performance reviews have had excellent scores. 
+                I've also achieved 15 Impact Awards for feature and/or contract related work."
+                progress="Developing my ability to lead teams, design, and write enterprise-grade code in server-side, client-side and in cloud environments."
               />
             </Tab>
             <Tab

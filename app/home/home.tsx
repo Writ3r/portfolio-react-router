@@ -23,8 +23,6 @@ function PageContent() {
         <SectionSeparator />
         <Experience />
         <SectionSeparator />
-        <Skills />
-        <SectionSeparator />
         <Projects />
       </Container>
     </>

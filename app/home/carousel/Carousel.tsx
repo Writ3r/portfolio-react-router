@@ -55,16 +55,16 @@ export function PortfolioCarousel() {
       <Carousel className="full-page-carousel">
         <CarouselItem>
           <PortfolioCarouselItem
-            saying="Keep It Simple, Silly"
-            code="isEven = (x % 2 == 0)"
-            explination="Simple code is trivial to extend and maintain"
+            saying="Try, Try Again"
+            code="while ( ! ( succeed = try() ) );"
+            explination="Keep trying until you have an answer"
           />
         </CarouselItem>
         <CarouselItem>
           <PortfolioCarouselItem
-            saying="Try, Try Again"
-            code="while ( ! ( succeed = try() ) );"
-            explination="Keep trying until you have an answer"
+            saying="Keep It Simple, Silly"
+            code="isEven = (x % 2 == 0)"
+            explination="Simple code is trivial to extend and maintain"
           />
         </CarouselItem>
         <CarouselItem>

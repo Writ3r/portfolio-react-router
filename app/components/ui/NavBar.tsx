@@ -38,7 +38,6 @@ export function NavBar() {
   const PORTFOLIO_ID = "portfolio";
   const ABOUT_ID = "about";
   const EXPERIENCE_ID = "experience";
-  const SKILLS_ID = "skills";
   const PROJECTS_ID = "projects";
 
   const NAV_TABS = [
@@ -46,41 +45,30 @@ export function NavBar() {
     PORTFOLIO_ID,
     ABOUT_ID,
     EXPERIENCE_ID,
-    SKILLS_ID,
     PROJECTS_ID,
   ];
 
   const [scrolled, setScrolled] = useState<boolean>(true);
   const [activeNav, setActiveNav] = useState<string>(HOME_ID);
 
-  // checks if an element is in view
-  const eleIsInView = (el: HTMLElement) => {
-    const box = el.getBoundingClientRect();
-    return box.top <= window.innerHeight && box.bottom >= 0;
-  };
-
-  // determine if last ele in view (edge case of last nav tab not triggering active)
-  const lastFooterEleInView = () => {
-    const footer = document.querySelector("footer");
-    return footer ? eleIsInView(footer) : false;
-  };
-
   useEffect(() => {
     const handleScroll = () => {
+      
+      // pull relevant vars off doc
+      const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
       // handles setting the nav bar to be transparent if at the top of the page
       const offset = window.scrollY;
       setScrolled(offset > 10);
-      // logic to work out what page anchor should be considered active
-      const lastEleInView = lastFooterEleInView();
-      // hack to fix setting last section to active since page can't scroll that far
-      if (lastEleInView) {
-        setActiveNav(PROJECTS_ID);
-        return;
-      }
+      
       NAV_TABS.forEach(function (e) {
         const navElement = document.getElementById(e);
+        // edge case of if the user scrolls to the bottom of the page, the last nav tab will be set as active
+        if (scrollTop + clientHeight >= scrollHeight - 1) {
+          setActiveNav(PROJECTS_ID);
+        }
         // normal logic case of if the scroll hits a new section, it will be set as active in nav bar
-        if (navElement && navElement.offsetTop - 100 <= offset) {
+        else if (navElement && navElement.offsetTop - 100 <= offset) {
           setActiveNav(e);
         }
       });
@@ -144,13 +132,6 @@ export function NavBar() {
               execMove={execMove}
             >
               Experience
-            </PortfolioNavLink>
-            <PortfolioNavLink
-              id={SKILLS_ID}
-              activeNavId={activeNav}
-              execMove={execMove}
-            >
-              Skills
             </PortfolioNavLink>
             <PortfolioNavLink
               id={PROJECTS_ID}

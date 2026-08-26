@@ -6,8 +6,7 @@ import {
   GITHUB_URL,
   LINKEDIN_URL,
   WEBSITE_URL,
-  COVER_LETTER_URL,
-  RESUME_URL,
+  RESUME_URL
 } from "~/components/ui/constants";
 
 export function Footer() {
@@ -21,18 +20,6 @@ export function Footer() {
           rel="noreferrer"
         >
           Resume Doc
-          <FontAwesomeIcon
-            className="ml-2 fa-white-icon animate__animated animate__swing animate__infinite"
-            icon={faDownload}
-          />
-        </Button>
-        <Button
-          variant="outline-light"
-          href={COVER_LETTER_URL}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Cover Letter
           <FontAwesomeIcon
             className="ml-2 fa-white-icon animate__animated animate__swing animate__infinite"
             icon={faDownload}

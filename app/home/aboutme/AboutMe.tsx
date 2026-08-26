@@ -5,7 +5,7 @@ import {
   faGraduationCap,
   faGamepad,
   faHiking,
-  faWalking,
+  faHammer,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   FontAwesomeIcon,
@@ -74,7 +74,7 @@ export function AboutMe() {
         <Col lg="6" md="12">
           <Skill
             name="Gamer"
-            desc="Gaming is awesome, it's a great social experience. Some games I play - Destiny, League of Legends, Minecraft, and OSRS."
+            desc="Gaming is a great social experience. Some games I play - Destiny 2, HellDivers 2, and OSRS."
             fontAwesomeIconProps={{
               icon: faGamepad,
               size: "2x",
@@ -83,7 +83,7 @@ export function AboutMe() {
           />
           <Skill
             name="Hiker"
-            desc="Hiking is my preferred method to experience world. It's a relaxing activity and great exercise."
+            desc="Hiking is my preferred method to experience world. It's both calming and great exercise."
             fontAwesomeIconProps={{
               icon: faHiking,
               size: "2x",
@@ -91,10 +91,10 @@ export function AboutMe() {
             }}
           />
           <Skill
-            name="Walker"
-            desc="If I can't hike, I'll walk! A quick walk a day helps keep me happy and healthy."
+            name="Home Improver"
+            desc="I've rewired my house to modern electrical code and ran ethernet to every room. It's satisfying to solve physical problems."
             fontAwesomeIconProps={{
-              icon: faWalking,
+              icon: faHammer,
               size: "2x",
               className: "fa-teal-icon",
             }}

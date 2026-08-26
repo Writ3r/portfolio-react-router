@@ -3,7 +3,7 @@ import { Row, Col, Button } from "react-bootstrap";
 import pic from "./work-731198_1920.jpg";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { RESUME_URL, COVER_LETTER_URL } from "~/components/ui/constants";
+import { RESUME_URL } from "~/components/ui/constants";
 
 const BIRTHDAY = new Date(1997, 1, 18);
 const PROJECT_START_DATE = new Date(2017, 8, 1);
@@ -52,7 +52,7 @@ export function MyPortfolio() {
             Here's a bit about <strong>myself</strong>, my{" "}
             <strong>projects</strong>, and my <strong>experience</strong>.
           </p>
-          <p>Everyone likes to show off a little right?</p>
+          <p>Feel free to contact me with any questions or opportunities!</p>
           <hr />
           <p>
             <strong>
@@ -69,7 +69,6 @@ export function MyPortfolio() {
               {yearsDiff(BIRTHDAY, currTime).toLocaleString()}
             </strong>{" "}
             years of life experience.
-            <strong> Let's hope these numbers keep growing!</strong>
           </p>
           <p>
             <strong>{secondsCoding.toLocaleString()}</strong> seconds spent
@@ -82,19 +81,6 @@ export function MyPortfolio() {
             className="btn-grey"
           >
             RESUME DOC
-            <FontAwesomeIcon
-              className="ml-2 animate__animated animate__swing animate__infinite fa-white-icon"
-              icon={faDownload}
-            />
-          </Button>
-          <Button
-            target="_blank"
-            rel="noreferrer"
-            href={COVER_LETTER_URL}
-            color="grey"
-            className="btn-grey"
-          >
-            COVER LETTER
             <FontAwesomeIcon
               className="ml-2 animate__animated animate__swing animate__infinite fa-white-icon"
               icon={faDownload}
