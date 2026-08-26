@@ -21,7 +21,7 @@ import {
   faEnvelope,
   faChartPie,
   faVolleyballBall,
-  faTrophy,
+  faUnlockKeyhole,
   faTShirt,
   faLink,
   faFolderOpen,
@@ -48,6 +48,14 @@ import clothesState from "./clothescloset/stateDiagram.jpg";
 import mailawaySwagger from "./mailaway/swagger-endpoints.png";
 import mailawayCreateAcc from "./mailaway/create-account.png";
 import mailawayPortainer from "./mailaway/portainer.png";
+import inbox from "./digicmd_webadmin/c.jpg";
+import tickets from "./digicmd_webadmin/d.jpg";
+import orders from "./digicmd_webadmin/e.jpg";
+import campaingns from "./digicmd_webadmin/f.jpg";
+import templates from "./digicmd_webadmin/g.jpg";
+import settings from "./digicmd_webadmin/h.jpg";
+import rules from "./digicmd_webadmin/i.jpg";
+import home from "./digicmd_webadmin/j.jpg";
 import { SectionTitle } from "~/components/ui/Section";
 
 function ProjectItemHeader(props: { text: string }) {
@@ -216,6 +224,7 @@ function ProjectTabLink(props: PropsWithChildren<{ link: string }>) {
 }
 
 export function Projects() {
+  const DigiCMD_KEY = "digicmd";
   const ROOTSTORE_KEY = "rts";
   const FEATURE_CLUSTERING_KEY = "fc";
   const DIGITAL_CMD_KEY = "dc";
@@ -247,6 +256,17 @@ export function Projects() {
                   className="animate__animated animate__jello animate__infinite fa-black-icon mr-2"
                 />
                 Portfolio Website
+              </ProjectTabItem>
+              <ProjectTabItem
+                activeKey={key}
+                navKey={DigiCMD_KEY}
+                setKey={setKey}
+              >
+                <FontAwesomeIcon
+                  icon={faUnlockKeyhole}
+                  className="animate__animated animate__jello animate__infinite fa-teal-icon mr-2"
+                />
+                DigiCmd Web Admin
               </ProjectTabItem>
               <ProjectTabItem
                 activeKey={key}
@@ -329,6 +349,38 @@ export function Projects() {
           </Col>
           <Col sm={9}>
             <TabContent>
+              <TabPane active={key === DigiCMD_KEY} eventKey={DigiCMD_KEY}>
+                <Project
+                  info={{
+                    projName: "DigiCmd Web Admin",
+                    authors: "Lucas Wing",
+                    period: "Feburary 2026-PRESENT",
+                  }}
+                  overview="Web appliication to act as a comprehensive LLM integrated admin panel for all of my future websites that need it, 
+                  inclding DigiCmd which I intend to make next. This project acts as the entire support and ordering system for any tenant which can be managed
+                  by an LLM for all tasking not realated to handling money, and with integrated human intervention capability. The LLM can process all incoming emails,
+                  draft responses, and queue up actions for support tickets which automatically exectue unless there's admin intervention."
+                  tech={[
+                    { name: "Languages", desc: "Typescript" },
+                    {
+                      name: "Frameworks",
+                      desc: "React-Router",
+                    },
+                    {
+                      name: "Hosting",
+                      desc: "Cloudflare Workers [serverless]",
+                    },
+                    {
+                      name: "Cloudflare Integrations",
+                      desc: "R2, Queues, D1, Zero Trust",
+                    },
+                  ]}
+                  conclusion="This project has been a great learning experience in both using LLMs for complex coding + design, and integrating them into a functionally useful application.
+                  I'm excited to see where this project goes."
+                  pics={DIGICMD_WEBADMIN_PICS}
+                >
+                </Project>
+              </TabPane>
               <TabPane active={key === PORTFOLIO_KEY} eventKey={PORTFOLIO_KEY}>
                 <Project
                   info={{
@@ -343,7 +395,7 @@ export function Projects() {
                     { name: "Languages", desc: "Typescript, HTML, CSS" },
                     {
                       name: "Frameworks",
-                      desc: "React-Router [Remix], Typescript, Bootstrap",
+                      desc: "React-Router [Remix], Bootstrap",
                     },
                     {
                       name: "Automatic Deployment",
@@ -372,7 +424,7 @@ export function Projects() {
                   info={{
                     projName: "Digital Command",
                     authors: "Lucas Wing",
-                    period: "June 2022 - PRESENT",
+                    period: "June 2022 - January 2024",
                   }}
                   overview="Users can create & download a digital distribution of programs which are usable offline. 
                   It has both a website for purchasing the program with stripe, downloading it, and purchasing extra features
@@ -387,8 +439,10 @@ export function Projects() {
                     { name: "Documentation", desc: "OpenAPI" },
                     { name: "Database", desc: "MongoDB" },
                   ]}
-                  conclusion="This project has been worked on and off for quite awhile on and off. 
-                  It is large so I tend to take breaks and work other smaller projects like RootStore and Feature Clustering."
+                  conclusion="This project had been worked on and off for quite awhile on and off. 
+                  Long enough such that my perspective on product viablility shifted. It was too complex of a project. 
+                  The intended user base would not understand it. Once I reached that realization, I decided to abandon the project and focus on other things.
+                  This project taught me all of the ins and outs of deploying with Spring Boot and Electron, so it was extremely valuable time spent."
                   pics={[]}
                 ></Project>
               </TabPane>
@@ -633,4 +687,15 @@ const KSSPE_PICS: Picture[] = [
 const CLOTHES_CLOSET_PICS: Picture[] = [
   { link: clothesClosetMenue, alt: "clothes closet program menu page" },
   { link: clothesClosetItem, alt: "clothes closet item page" },
+];
+
+const DIGICMD_WEBADMIN_PICS: Picture[] = [
+  { link: home, alt: "digicmd webadmin home page" },
+  { link: inbox, alt: "digicmd webadmin inbox page" },
+  { link: tickets, alt: "digicmd webadmin tickets page" },
+  { link: orders, alt: "digicmd webadmin orders page" },
+  { link: campaingns, alt: "digicmd webadmin campaigns page" },
+  { link: templates, alt: "digicmd webadmin templates page" },
+  { link: settings, alt: "digicmd webadmin settings page" },
+  { link: rules, alt: "digicmd webadmin rules page" }
 ];
