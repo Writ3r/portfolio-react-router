@@ -72,7 +72,7 @@ export function Experience() {
                     color="#3f51b5"
                     className="animate__animated animate__jello animate__infinite"
                   />{" "}
-                  BAE Systems - Senior Principal Software Engineer
+                  BAE Systems - Principal Software Engineer
                 </>
               }
             >
@@ -80,7 +80,7 @@ export function Experience() {
                 info={{
                   startingPos: "Software Engineer 1 ",
                   period: "June 2019 - PRESENT",
-                  currentPosition: "Senior Principal Software Engineer",
+                  currentPosition: "Principal Software Engineer",
                 }}
                 respon="Designing and developing GXP Platform's Service infastructure locally and in the cloud. 
                 Tech leading our team of Service Infastructure engineers to achieve our feature requirements. Reviewing PRs and aiding Architects in Epic breakdowns into features.
